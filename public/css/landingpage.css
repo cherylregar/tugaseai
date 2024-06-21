@@ -1,0 +1,187 @@
+/* Reset and General Styles */
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+    background-color: #0077B6; /* Warna latar belakang default */
+    margin: 0;
+    background-image: url('images/fotolanding.jpg'); /* Foto latar belakang */
+    background-size: cover; /* Memastikan foto mengisi area body */
+    background-position: center; /* Posisi foto di tengah */
+    background-attachment: fixed; /* Agar latar belakang tetap di tempat saat menggulir */
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.containerawal {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.containerawal p {
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.2; /* Sesuaikan spasi antar baris */
+}
+
+.containerawal .highlight {
+    color: #F3CA4D;
+}
+
+.buttonmemilah {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.buttonmemilah .start-button {
+    width: 200px;
+    height: 46px;
+    border-radius: 20px;
+    background: #F3CA4D;
+    color: #2989BD;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+/* Styles for boxjualan1, bjcon1, and bjcon2 */
+
+.boxjualan {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap; /* Pastikan item-wrap di layar yang lebih kecil */
+    margin-top: 5px;
+}
+
+.bjcon1, .bjcon2 {
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #F3CA4D;
+    margin: 10px; /* Tambahkan margin untuk ruang */
+}
+
+.bjcon1 {
+    width: 930px;
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bjcon2 {
+    width: 378px;
+    height: 370px;
+}
+
+@media (max-width: 991px) {
+    .bjcon1, .bjcon2 {
+        width: calc(100% - 40px); /* Sesuaikan lebar untuk layar yang lebih kecil */
+        margin-right: 0;
+        margin-bottom: 20px; /* Ruang antara bjcon1 dan bjcon2 di tampilan mobile */
+    }
+}
+
+/* Styles for jenisdijual, conkerkar, conplas, rectangle1, rectangle2, rectanglea, rectangleb, and tulisanjenis */
+
+.jenisdijual {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.concontainer {
+    margin: 20px;
+    display: flex;
+    flex-direction: column; /* Ubah menjadi column untuk menumpuk item secara vertikal */
+    align-items: center; /* Pusatkan item secara horizontal */
+}
+
+.conker, .conplas , .conkar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rectangle1 {
+    width: 260px;
+    height: 226px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #03669B;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.rectanglea {
+    width: 260px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tulisanjenis {
+    width: 176px;
+    height: 32px;
+    flex-shrink: 0;
+    color: #03669B;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.keterangan {
+    width: 451px;
+    color: #03669B;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: normal;
+}
+
+/* Additional styles for image */
+
+.foto-sampah {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+}
+
+.tulewaste
+{
+    color: #03669B;
+    text-align: right;
+    font-family: Poppins;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 30px;
+}

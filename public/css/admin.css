@@ -1,0 +1,214 @@
+/* admin.css */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FAFAFA;
+    margin: 0;
+}
+
+.navbar-admin {
+    background-color: #F3CA4D;
+    height: 79px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed; /* Make navbar fixed */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure navbar is above other elements */
+}
+
+.navbar-admin .logo-container {
+    flex-shrink: 0;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.navbar-admin img {
+    width: 223px;
+    height: 47px;
+}
+
+.sidebar {
+    width: 300px;
+    height: calc(100vh - 79px); /* Adjust height to exclude navbar height */
+    background: #FFF;
+    box-shadow: 0px 4px 60px 0px rgba(0, 0, 0, 0.20);
+    position: fixed;
+    top: 79px; /* Start below the fixed navbar */
+    left: 0;
+}
+
+.sidebar .profile-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sidebar .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.sidebar .profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sidebar .admin-text {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0; /* Remove default padding */
+    margin-top: 0;
+    margin-left: 10px;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+    position: relative; /* Needed for the blue bar */
+}
+
+.sidebar ul li a {
+    color: #757575;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px; /* Add padding for better alignment */
+}
+
+.sidebar ul li.active {
+    background: #F4F4F4; /* Grey background for active item */
+}
+
+.sidebar ul li.active::before {
+    content: '';
+    width: 8px;
+    height: 51px;
+    background: #0077B6; /* Blue bar for active item */
+    position: absolute;
+    left: -10px; /* Adjust as needed to position correctly */
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.main-content {
+    margin-left: 300px; /* Adjust to match sidebar width */
+    padding: 20px;
+    margin-top: 79px; /* Add margin to avoid overlap with navbar */
+}
+
+/* Styles for bjcon1 and related elements */
+
+.bjcon1 {
+    width: 930px;
+    height: auto;
+    background: #F3CA4D;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.jenisdijual {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.concontainer {
+    margin: 20px;
+    display: flex;
+    flex-direction: column; /* Ubah menjadi column untuk menumpuk item secara vertikal */
+    align-items: center; /* Pusatkan item secara horizontal */
+}
+
+.rectangle1 {
+    width: 260px;
+    height: 226px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #03669B;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.rectanglea {
+    width: 260px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Required for positioning buttons */
+}
+
+.tulisanjenis {
+    width: 176px;
+    height: 32px;
+    flex-shrink: 0;
+    color: #03669B;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+/* Styles for buttons */
+.btn-circle {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #0077B6;
+    color: #FFF;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.btn-circle i {
+    font-size: 16px;
+}
+
+.btn-circle form {
+    display: inline-block;
+}
+
+.btn-circle button {
+    background: none;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Additional styles for image */
+.foto-sampah {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+}
