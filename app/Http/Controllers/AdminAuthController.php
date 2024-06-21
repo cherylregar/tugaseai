@@ -43,4 +43,19 @@ class AdminAuthController extends Controller
         // Kirim data ke view adminpage.blade.php
         return view('admin.adminpage', compact('sampahJual'));
     }
+
+    public function logout(Request $request)
+    {
+        // Proses logout
+        Auth::guard('admin')->logout();
+
+        // Hapus semua data sesi
+        $request->session()->invalidate();
+
+        // Regenerasi token sesi
+        $request->session()->regenerateToken();
+
+        // Redirect ke halaman login
+        return redirect()->route('loginadmin');
+    }
 }

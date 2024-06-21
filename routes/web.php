@@ -38,6 +38,8 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     Route::put('/sampahjual/{idSampah}', [SampahJualController::class, 'update'])->name('sampahjual.update');
 });
 
+Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+
 // Rute untuk halaman kesalahan login
 Route::get('/kesalahanlogin', function () {
     return view('kesalahanlogin');

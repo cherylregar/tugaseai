@@ -1,6 +1,4 @@
-<!-- resources/views/partials/sidebar.blade.php -->
 @php
-    // Mengambil data admin dari session
     $nmAdmin = session('nmAdmin');
     $fotoAdmin = session('fotoAdmin');
     $firstWord = explode(' ', $nmAdmin)[0];
@@ -11,7 +9,6 @@
         <div class="circle">
             <img src="{{ asset('storage/fotos/' . session('fotoAdmin')) }}" alt="Admin Photo" class="profile-image">
         </div>
-        <!-- Menampilkan teks 'Admin' + kata pertama dari nmAdmin -->
         <p class="admin-text">Admin {{ $firstWord }}</p>
     </div>
     <ul>
@@ -37,4 +34,8 @@
             <a href="{{ route('admin.tambah-produk-sampah') }}">Tambah Produk Sampah</a>
         </li>
     </ul>
+    <form action="{{ route('admin.logout') }}" method="POST">
+        @csrf
+        <button type="submit" class="logout-button">Logout</button>
+    </form>
 </aside>
