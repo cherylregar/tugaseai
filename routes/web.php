@@ -5,26 +5,33 @@ use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\SampahJualController;
 
-// Rute untuk halaman landing
+// Landing page route
 Route::get('/', [LandingPageController::class, 'index'])->name('landingpage');
 
-// Rute untuk halaman about (halaman umum)
+// About page route
 Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-// Rute untuk halaman login kustom (halaman umum)
+// Customer login route
 Route::get('/logincust', function () {
     return view('logincust');
 })->name('logincust');
 
-// Rute untuk form login admin
+// Admin login routes
 Route::get('/loginadmin', [AdminAuthController::class, 'showLoginForm'])->name('loginadmin');
 Route::post('/loginadmin', [AdminAuthController::class, 'login'])->name('admin.login.submit');
 
-// Middleware untuk grup rute admin
+// Routes that require admin authentication
 Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
+    // Admin dashboard route
     Route::get('/adminpage', [AdminAuthController::class, 'adminpage'])->name('admin.adminpage');
+
+    // Edit and update routes for SampahJualController
+    Route::get('/editsampahjual/{idSampah}', [SampahJualController::class, 'edit'])->name('editsampahjual');
+    Route::put('/updatesampahjual/{idSampah}', [SampahJualController::class, 'update'])->name('updatesampahjual');
+
+    // Other admin routes
     Route::get('/pesanan', [AdminAuthController::class, 'pesanan'])->name('admin.pesanan');
     Route::get('/dashboard', [AdminAuthController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/leaderboard', [AdminAuthController::class, 'leaderboard'])->name('admin.leaderboard');
@@ -33,19 +40,22 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     Route::get('/tambah-produk-sampah', [AdminAuthController::class, 'tambahProdukSampah'])->name('admin.tambah-produk-sampah');
     Route::get('/pengajuan-setorsampah', [AdminAuthController::class, 'pengajuanSetorSampah'])->name('admin.pengajuansetorsampah');
 
-    // Rute untuk mengedit data sampah
-    Route::get('/sampahjual/{idSampah}/edit', [SampahJualController::class, 'edit'])->name('sampahjual.edit');
-    Route::put('/sampahjual/{idSampah}', [SampahJualController::class, 'update'])->name('sampahjual.update');
+    // Admin logout route
+    Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 });
 
+// Logout route
 Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
-// Rute untuk halaman kesalahan login
+// Error login route
 Route::get('/kesalahanlogin', function () {
     return view('kesalahanlogin');
 })->name('kesalahanlogin');
 
-// Rute untuk memeriksa koneksi database
+// Check database connection route
 Route::get('/check-database', function () {
     return response()->view('checkdatabaseconnection');
 })->name('checkdatabase');
+
+// Additional routes...
+

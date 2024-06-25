@@ -1,6 +1,12 @@
-@extends('admin.admin')
-
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Data Sampah</title>
+    <link rel="stylesheet" href="{{ asset('css/editsampahjual.css') }}">
+</head>
+<body>
     <div class="container">
         <h1>Edit Data Sampah</h1>
 
@@ -14,7 +20,7 @@
             </div>
         @endif
 
-        <form action="{{ route('sampahjual.update', $sampah->idSampah) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('updatesampahjual', $sampah->idSampah) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -42,4 +48,5 @@
             <a href="{{ route('admin.adminpage') }}" class="btn btn-secondary">Batal</a>
         </form>
     </div>
-@endsection
+</body>
+</html>

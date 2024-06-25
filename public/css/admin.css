@@ -37,12 +37,12 @@ body {
 /* Styles for bjcon1 and related elements */
 
 .bjcon1 {
-    width: 930px;
+    width: 900px;
     height: auto;
     background: #F3CA4D;
     border-radius: 20px;
     padding: 20px;
-    margin: 20px auto;
+    margin: 10px auto;
 }
 
 .jenisdijual {
@@ -135,3 +135,18 @@ body {
     max-height: 100%;
     position: absolute;
 }
+
+
+@media only screen and (max-width: 480px) {
+    .bjcon1 {
+        width: 400px;
+        height: auto;
+        background: #F3CA4D;
+        border-radius: 20px;
+        padding: 20px;
+        margin: 10px auto;
+    }
+}
+
+
+

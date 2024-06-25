@@ -2,31 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SampahJual;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Admin;
-use App\Models\SampahJual;
 
 class AdminAuthController extends Controller
 {
     public function showLoginForm()
     {
-        return view('admin.loginadmin'); // Pastikan path ini sesuai dengan lokasi file
+        return view('admin.loginadmin');
     }
 
     public function login(Request $request)
     {
         $credentials = $request->only('emailAdmin', 'password');
 
-        // Menggunakan Eloquent untuk mencari admin berdasarkan email
         $admin = Admin::where('emailAdmin', $credentials['emailAdmin'])->first();
 
         if ($admin && Hash::check($credentials['password'], $admin->passAdmin)) {
-            // Jika login berhasil, simpan nmAdmin dan fotoAdmin dalam sesi
             session(['nmAdmin' => $admin->nmAdmin, 'fotoAdmin' => $admin->fotoAdmin]);
 
-            // Login menggunakan guard admin
             Auth::guard('admin')->login($admin);
 
             return redirect()->route('admin.adminpage');
@@ -37,25 +34,24 @@ class AdminAuthController extends Controller
 
     public function adminpage()
     {
-        // Ambil semua data dari tabel SampahJual
-        $sampahJual = SampahJual::all();
+        $sampahKertas = SampahJual::where('idSampah', 'SAMP001')->first();
+        $sampahKardus = SampahJual::where('idSampah', 'SAMP002')->first();
+        $sampahPlastik = SampahJual::where('idSampah', 'SAMP003')->first();
+        $sampahItems = SampahJual::all();
 
-        // Kirim data ke view adminpage.blade.php
-        return view('admin.adminpage', compact('sampahJual'));
+        return view('admin.adminpage', compact('sampahKertas', 'sampahKardus', 'sampahPlastik', 'sampahItems'));
     }
 
     public function logout(Request $request)
     {
-        // Proses logout
         Auth::guard('admin')->logout();
 
-        // Hapus semua data sesi
         $request->session()->invalidate();
 
-        // Regenerasi token sesi
         $request->session()->regenerateToken();
 
-        // Redirect ke halaman login
         return redirect()->route('loginadmin');
     }
+
+    // Other methods if any
 }
