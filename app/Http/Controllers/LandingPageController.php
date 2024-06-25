@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\SampahJual;
+use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
 {
     public function index()
     {
-        // Ambil data dari database berdasarkan nmSampah yang sesuai
-        $sampahKertas = SampahJual::where('nmSampah', 'Kertas')->first(['idSampah', 'nmSampah', 'foto']);
-        $sampahKardus = SampahJual::where('nmSampah', 'Kardus')->first(['idSampah', 'nmSampah', 'foto']);
-        $sampahPlastik = SampahJual::where('nmSampah', 'Plastik')->first(['idSampah', 'nmSampah', 'foto']);
+        // Ambil data berdasarkan idSampah
+        $sampahKertas = SampahJual::where('idSampah', 'SAMP001')->first();
+        $sampahKardus = SampahJual::where('idSampah', 'SAMP002')->first();
+        $sampahPlastik = SampahJual::where('idSampah', 'SAMP003')->first();
 
-        // Kirim data ke view landingpage.blade.php
         return view('landingpage', compact('sampahKertas', 'sampahKardus', 'sampahPlastik'));
     }
 }

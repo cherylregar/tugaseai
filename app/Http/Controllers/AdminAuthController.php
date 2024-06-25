@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\SampahJual;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
-use App\Models\Admin;
+use Illuminate\Support\Facades\Hash; // Import Hash dari namespace Illuminate\Support\Facades
+use App\Models\Admin; // Pastikan model Admin diimpor jika belum diimpor
 
 class AdminAuthController extends Controller
 {
@@ -40,6 +40,27 @@ class AdminAuthController extends Controller
         $sampahItems = SampahJual::all();
 
         return view('admin.adminpage', compact('sampahKertas', 'sampahKardus', 'sampahPlastik', 'sampahItems'));
+    }
+
+    public function update(Request $request, $idSampah)
+    {
+        // Validasi input jika diperlukan
+
+        $sampah = SampahJual::find($idSampah);
+
+        if (!$sampah) {
+            return redirect()->back()->with('errorMsg', 'Data sampah tidak ditemukan.');
+        }
+
+        // Update atribut-atribut yang diubah
+        $sampah->nmSampah = $request->input('nmSampah');
+        $sampah->poinjual = $request->input('poinjual');
+
+        // Simpan perubahan
+        $sampah->save();
+
+        // Redirect dengan pesan sukses atau error jika diperlukan
+        return redirect()->route('admin.adminpage')->with('successMsg', 'Data sampah berhasil diperbarui.');
     }
 
     public function logout(Request $request)

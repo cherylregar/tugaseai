@@ -4,15 +4,6 @@
     <div class="container">
         <h1>Welcome, {{ session('nmAdmin') }}!</h1>
 
-        <p>mengambil idsampah: 
-            @foreach($sampahItems as $sampah) 
-                {{ $sampah->idSampah }} 
-                @if (!$loop->last)
-                    , 
-                @endif
-            @endforeach
-        </p>
-
         @if (session('error'))
             <div class="alert alert-danger">
                 {{ session('error') }}
@@ -97,7 +88,7 @@
                 @endisset
 
             </div>
-            <p class="keterangan">*Sampah yang dapat ditukar menjadi poin</p>
+            <p class="keterangan">*Sampah yang sedang ditampilkan di Landing Page</p>
         </div>
 
         <!-- Table Display -->
