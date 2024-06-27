@@ -73,27 +73,26 @@ class SampahJualController extends Controller
         // Handle file upload
         if ($request->hasFile('foto')) {
             // Get filename with the extension
-            $filenameWithExt = $request->file('foto')->getClientOriginalName();
-            // Get just filename
-            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            // Get just extension
-            $extension = $request->file('foto')->getClientOriginalExtension();
-            // Filename to store
-            $fileNameToStore = $filename.'_'.time().'.'.$extension;
-            // Upload Image
-            $path = $request->file('foto')->storeAs('public/fotos', $fileNameToStore);
+            $filename = $request->file('foto')->getClientOriginalName();
+
+            // Move the file to the directory
+            $directory = public_path('storage/fotos');
+            $request->file('foto')->move($directory, $filename);
         } else {
-            $fileNameToStore = null;
+            $filename = null;
         }
 
         $sampah = new SampahJual();
         $sampah->idSampah = $request->idSampah;
         $sampah->nmSampah = $request->nmSampah;
         $sampah->poinjual = $request->poinjual;
-        $sampah->foto = $fileNameToStore;
+        $sampah->foto = $filename;
         $sampah->save();
 
-        return redirect()->route('admin.adminpage')->with('success', 'Data sampah berhasil ditambahkan.');
+        // Construct the success message with idSampah
+        $successMessage = 'Data sampah dengan ' . $sampah->idSampah . ' telah tersimpan';
+
+        return redirect()->route('admin.adminpage')->with('success', $successMessage);
     }
 
     public function destroy($idSampah)
@@ -104,6 +103,7 @@ class SampahJualController extends Controller
             return redirect()->route('admin.adminpage')->with('error', 'Delete data failed: Data sampah tidak ditemukan.');
         }
 
+        // Delete photo if exists
         if ($sampah->foto) {
             Storage::delete('public/fotos/' . $sampah->foto);
         }

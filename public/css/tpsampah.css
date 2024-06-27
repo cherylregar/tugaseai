@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #FAFAFA;
@@ -10,12 +12,10 @@ body {
     margin-top: 80px; /* Add margin to avoid overlap with navbar */
 }
 
-
 .container {
     max-width: 800px;
     margin: auto;
 }
-
 
 .judultps {
     text-align: center;
@@ -41,6 +41,7 @@ body {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font to input elements */
 }
 
 .tombol-tambah {
