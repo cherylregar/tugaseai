@@ -1,37 +1,25 @@
+/* admin.css */
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #FAFAFA;
     margin: 0;
 }
 
-.navbar-admin {
-    background-color: #F3CA4D;
-    height: 79px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    position: fixed; /* Make navbar fixed */
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* Ensure navbar is above other elements */
-}
-
-.navbar-admin .logo-container {
-    flex-shrink: 0;
-    margin-top: 10px;
-    margin-left: 5px;
-}
-
-.navbar-admin img {
-    width: 223px;
-    height: 47px;
-}
-
 .main-content {
     margin-left: 300px; /* Adjust to match sidebar width */
     padding: 20px;
-    margin-top: 79px; /* Add margin to avoid overlap with navbar */
+    margin-top: 80px; /* Add margin to avoid overlap with navbar */
+}
+
+.container p {
+    color: #03669B;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    margin: 20px;
+    line-height: 1.2; /* Sesuaikan spasi antar baris */
 }
 
 /* Styles for bjcon1 and related elements */
@@ -136,7 +124,6 @@ body {
     position: absolute;
 }
 
-
 @media only screen and (max-width: 480px) {
     .bjcon1 {
         width: 400px;
@@ -147,6 +134,3 @@ body {
         margin: 10px auto;
     }
 }
-
-
-

@@ -63,6 +63,12 @@ class AdminAuthController extends Controller
         return redirect()->route('admin.adminpage')->with('successMsg', 'Data sampah berhasil diperbarui.');
     }
 
+    public function tambahProdukSampah()
+    {
+        $lastSampah = SampahJual::latest('idSampah')->first();
+        return view('admin.tambahproduksampah', compact('lastSampah'));
+    }
+
     public function logout(Request $request)
     {
         Auth::guard('admin')->logout();

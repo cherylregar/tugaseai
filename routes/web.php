@@ -40,6 +40,9 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     Route::get('/tambah-produk-sampah', [AdminAuthController::class, 'tambahProdukSampah'])->name('admin.tambah-produk-sampah');
     Route::get('/pengajuan-setorsampah', [AdminAuthController::class, 'pengajuanSetorSampah'])->name('admin.pengajuansetorsampah');
 
+    // Route untuk form submission
+    Route::post('/storeproduksampah', [SampahJualController::class, 'store'])->name('admin.storeproduksampah');
+
     // Admin logout route
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 });
@@ -58,4 +61,3 @@ Route::get('/check-database', function () {
 })->name('checkdatabase');
 
 // Additional routes...
-

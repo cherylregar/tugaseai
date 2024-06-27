@@ -1,8 +1,12 @@
 @extends('admin.admin')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+@endsection
+
 @section('content')
     <div class="container">
-        <h1>Welcome, {{ session('nmAdmin') }}!</h1>
+        <p>Welcome, {{ session('nmAdmin') }}!</p>
 
         @if (session('error'))
             <div class="alert alert-danger">
@@ -21,7 +25,6 @@
                 <!-- Section for Kertas -->
                 @isset($sampahKertas)
                     <div class="concontainer">
-
                         <div class="rectangle1">
                             @if ($sampahKertas && file_exists(public_path('storage/fotos/' . $sampahKertas->foto)))
                                 <img src="{{ asset('storage/fotos/' . $sampahKertas->foto) }}" alt="{{ $sampahKertas->nmSampah }}" class="foto-sampah">
@@ -29,7 +32,6 @@
                                 <p>Foto tidak tersedia</p>
                             @endif
                         </div>
-
                         <div class="rectanglea">
                             <span class="tulisanjenis">{{ $sampahKertas->nmSampah }} | {{ $sampahKertas->idSampah }}</span>
                             <div class="btn-circle">
@@ -44,7 +46,6 @@
                 <!-- Section for Kardus -->
                 @isset($sampahKardus)
                     <div class="concontainer">
-
                         <div class="rectangle1">
                             @if ($sampahKardus && file_exists(public_path('storage/fotos/' . $sampahKardus->foto)))
                                 <img src="{{ asset('storage/fotos/' . $sampahKardus->foto) }}" alt="{{ $sampahKardus->nmSampah }}" class="foto-sampah">
@@ -52,7 +53,6 @@
                                 <p>Foto tidak tersedia</p>
                             @endif
                         </div>
-
                         <div class="rectanglea">
                             <span class="tulisanjenis">{{ $sampahKardus->nmSampah }} | {{ $sampahKardus->idSampah }}</span>
                             <div class="btn-circle">
@@ -67,7 +67,6 @@
                 <!-- Section for Plastik -->
                 @isset($sampahPlastik)
                     <div class="concontainer">
-
                         <div class="rectangle1">
                             @if ($sampahPlastik && file_exists(public_path('storage/fotos/' . $sampahPlastik->foto)))
                                 <img src="{{ asset('storage/fotos/' . $sampahPlastik->foto) }}" alt="{{ $sampahPlastik->nmSampah }}" class="foto-sampah">
@@ -75,7 +74,6 @@
                                 <p>Foto tidak tersedia</p>
                             @endif
                         </div>
-
                         <div class="rectanglea">
                             <span class="tulisanjenis">{{ $sampahPlastik->nmSampah }} | {{ $sampahPlastik->idSampah }}</span>
                             <div class="btn-circle">
@@ -86,13 +84,11 @@
                         </div>
                     </div>
                 @endisset
-
             </div>
-            <p class="keterangan">*Sampah yang sedang ditampilkan di Landing Page</p>
+            <div class="keterangan">*Sampah yang sedang ditampilkan di Landing Page</div>
         </div>
 
         <!-- Table Display -->
-
         <div class="bjcon1">
             <div class="table-responsive">
                 <table class="table table-striped table-bordered">

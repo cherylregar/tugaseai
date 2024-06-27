@@ -1,0 +1,24 @@
+
+.navbar-admin {
+    background-color: #F3CA4D;
+    height: 79px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed; /* Make navbar fixed */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure navbar is above other elements */
+}
+
+.navbar-admin .logo-container {
+    flex-shrink: 0;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.navbar-admin img {
+    width: 223px;
+    height: 47px;
+}

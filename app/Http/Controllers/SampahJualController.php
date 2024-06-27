@@ -60,5 +60,38 @@ class SampahJualController extends Controller
 
         return redirect()->route('admin.adminpage')->with('success', 'Data sampah berhasil diperbarui.');
     }
-}
 
+    public function store(Request $request)
+    {
+        $request->validate([
+            'idSampah' => 'required|string|max:255|unique:sampahjual,idSampah',
+            'nmSampah' => 'required|string|max:255',
+            'poinjual' => 'required|integer',
+            'foto' => 'nullable|image|max:2048',
+        ]);
+
+        // Handle file upload
+        if ($request->hasFile('foto')) {
+            // Get filename with the extension
+            $filename = $request->file('foto')->getClientOriginalName();
+
+            // Move the file to the directory
+            $directory = public_path('storage/fotos');
+            $request->file('foto')->move($directory, $filename);
+        } else {
+            $filename = null;
+        }
+
+        $sampah = new SampahJual();
+        $sampah->idSampah = $request->idSampah;
+        $sampah->nmSampah = $request->nmSampah;
+        $sampah->poinjual = $request->poinjual;
+        $sampah->foto = $filename;
+        $sampah->save();
+
+        // Construct the success message with idSampah
+        $successMessage = 'Data sampah dengan ' . $sampah->idSampah . ' telah tersimpan';
+
+        return redirect()->route('admin.adminpage')->with('success', $successMessage);
+    }
+}
