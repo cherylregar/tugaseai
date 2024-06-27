@@ -10,6 +10,7 @@ body {
     background-attachment: fixed; /* Agar latar belakang tetap di tempat saat menggulir */
 }
 
+
 .content {
     width: 100%;
     display: flex;
@@ -86,13 +87,6 @@ body {
     height: 370px;
 }
 
-@media (max-width: 991px) {
-    .bjcon1, .bjcon2 {
-        width: calc(100% - 40px); /* Sesuaikan lebar untuk layar yang lebih kecil */
-        margin-right: 0;
-        margin-bottom: 20px; /* Ruang antara bjcon1 dan bjcon2 di tampilan mobile */
-    }
-}
 
 /* Styles for jenisdijual, conkerkar, conplas, rectangle1, rectangle2, rectanglea, rectangleb, and tulisanjenis */
 
@@ -185,3 +179,106 @@ body {
     line-height: normal;
     padding: 30px;
 }
+
+@media (max-width: 430px) {
+    
+    .boxjualan {
+        display:contents;
+        justify-content: center;
+        text-align: center;
+        flex-wrap: wrap; /* Pastikan item-wrap di layar yang lebih kecil */
+        margin-top: 5px;
+    }
+    
+    .jenisdijual {
+    display:contents;
+    justify-content: space-around;
+    width: 100%;
+    }
+
+    .containerawal p {
+        color: #FFF;
+        font-family: 'Poppins', sans-serif;
+        font-size: 30px;
+        font-weight: 600;
+        margin: 0;
+        line-height: 1.2;
+        margin: 5px
+    }
+    
+    .containerawal .highlight {
+        color: #F3CA4D;
+    }
+
+
+}
+
+
+@media (max-width: 820px) {
+    
+    .boxjualan {
+        display:contents;
+        justify-content: center;
+        text-align: center;
+        flex-wrap: wrap; /* Pastikan item-wrap di layar yang lebih kecil */
+        margin-top: 5px;
+    }
+    
+    .bjcon1, .bjcon2 {
+        width: 85%; 
+        height: fit-content;/* Sesuaikan lebar untuk layar yang lebih kecil */
+        margin-right: 0;
+        margin-bottom: 20px; /* Ruang antara bjcon1 dan bjcon2 di tampilan mobile */
+    }
+ 
+    .rectangle1 {
+        width: 182px;
+        height: 158.2px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        background: #03669B;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .rectanglea {
+        width: 182px;
+        height: 36.4px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        background: #FFF;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .jenisdijual {
+    justify-content: space-around;
+    width: 100%;
+    }
+
+    .containerawal p {
+        color: #FFF;
+        font-family: 'Poppins', sans-serif;
+        font-size: 30px;
+        font-weight: 600;
+        margin: 0;
+        line-height: 1.2;
+        margin: 5px
+    }
+    
+    .containerawal .highlight {
+        color: #F3CA4D;
+    }
+
+
+}
+
+

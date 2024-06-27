@@ -101,7 +101,12 @@
         width: 84px;
         height: 32px;
         border-radius: 8px;
-        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    .search-container {
+        width: 300px;
+        display: none; /* Hide search container in normal navbar */
     }
 
     .navbar-toggler {
@@ -133,4 +138,12 @@
         justify-content: space-between;
         width: 100%;
     }
+
+    .navbar-collapse .search-container {
+        display: flex;
+        margin-top: 20px; /* Adjust spacing if needed */
+    }
+
+
+  
 }
