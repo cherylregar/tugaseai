@@ -58,7 +58,7 @@
 
                 <div class="bjcon2">
                         <p class="tulewaste">E-Waste</p>
-                    
+                            <img src="{{ asset('images/ewaste.png') }}" alt="Foto Ewaste" class ="ewastefoto">
                 </div>
             </div>
          
