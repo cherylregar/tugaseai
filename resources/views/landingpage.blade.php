@@ -23,7 +23,7 @@
                         @endif
                     </div>
                     <div class="rectanglea">
-                        <span class="tulisanjenis">{{ $sampahKertas->nmSampah }}</span>
+                        <span class="tulisanjenis">{{ $sampahKertas->nmSampah ?? 'Nama Sampah tidak tersedia' }}</span>
                     </div>
                 </div>
                 <div class="concontainer">
@@ -35,7 +35,7 @@
                         @endif
                     </div>
                     <div class="rectanglea">
-                        <span class="tulisanjenis">{{ $sampahKardus->nmSampah }}</span>
+                        <span class="tulisanjenis">{{ $sampahKardus->nmSampah ?? 'Nama Sampah tidak tersedia' }}</span>
                     </div>
                 </div>
                 <div class="concontainer">
@@ -47,7 +47,7 @@
                         @endif
                     </div>
                     <div class="rectanglea">
-                        <span class="tulisanjenis">{{ $sampahPlastik->nmSampah }}</span>
+                        <span class="tulisanjenis">{{ $sampahPlastik->nmSampah ?? 'Nama Sampah tidak tersedia' }}</span>
                     </div>
                 </div>
             </div>
