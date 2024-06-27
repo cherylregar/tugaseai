@@ -100,6 +100,7 @@
                             <th>Foto</th>
                             <th>Created At</th>
                             <th>Updated At</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -117,6 +118,15 @@
                             </td>
                             <td>{{ $sampah->created_at }}</td>
                             <td>{{ $sampah->updated_at }}</td>
+                            <td>
+                                <form action="{{ route('sampahjual.destroy', $sampah->idSampah) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">
+                                        <i class="fas fa-trash-alt" style="color:white;"></i>
+                                    </button>
+                                </form>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

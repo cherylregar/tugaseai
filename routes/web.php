@@ -43,6 +43,8 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     // Route untuk form submission
     Route::post('/storeproduksampah', [SampahJualController::class, 'store'])->name('admin.storeproduksampah');
 
+    Route::delete('/sampahjual/{idSampah}', [SampahJualController::class, 'destroy'])->name('sampahjual.destroy');
+
     // Admin logout route
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 });
