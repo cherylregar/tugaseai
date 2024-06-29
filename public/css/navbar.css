@@ -89,9 +89,6 @@
     margin-left: 20px;
 }
 
-
-
-
 /* Responsive Design for Navbar */
 @media (max-width: 991px) {
     .navbar {
@@ -110,8 +107,7 @@
     .signup-button {
         width: 84px;
         height: 32px;
-        border-radius: 8px;
-        margin-left: 5px;
+        border-radius: 8px; 
     }
 
     .navbar-toggler {
@@ -192,7 +188,6 @@
         width: 84px;
         height: 32px;
         border-radius: 8px;
-        margin-left: 5px;
     }
 
     .navbar-toggler {
@@ -261,4 +256,3 @@
         padding-left: 10px;
     }
 }
-

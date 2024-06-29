@@ -26,7 +26,7 @@
                 <i class="fas fa-search search-icon"></i>
                 <input type="text" class="search-bar" placeholder="Cari kampus kamu disini!">
             </div>
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto align-items-center"> <!-- Add align-items-center class -->
                 <li class="nav-item">
                     <a href="{{ route('logincust') }}" class="nav-link">Login</a>
                 </li>
