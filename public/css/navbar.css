@@ -1,3 +1,4 @@
+/* General Navbar Styles */
 .navbar {
     background: #03669B;
     padding-top: 15px;
@@ -37,7 +38,14 @@
     background: #FFF;
     display: flex;
     align-items: center;
-    margin-right: 20px;
+}
+
+.search-container-desktop {
+    display: flex;
+}
+
+.search-container-responsive {
+    display: none;
 }
 
 .search-icon {
@@ -81,8 +89,10 @@
     margin-left: 20px;
 }
 
-/* Responsive Design for Navbar */
 
+
+
+/* Responsive Design for Navbar */
 @media (max-width: 991px) {
     .navbar {
         padding-left: 20px;
@@ -104,13 +114,89 @@
         margin-left: 5px;
     }
 
-    .search-container {
-        width: 300px;
-        display: none; /* Hide search container in normal navbar */
+    .navbar-toggler {
+        border: none;
+        margin-left: auto; /* Place the burger bar to the right */
+    }
+
+    .navbar-toggler-icon {
+        color: white;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    .navbar-collapse {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .navbar-collapse .nav-item {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .navbar-collapse .nav-link {
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar-header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar-collapse .nav-link.active {
+        background-color: #023c5b; /* Active background color for responsive mode */
+    }
+
+    .search-container-desktop {
+        display: none;
+    }
+
+    .search-container-responsive {
+        display: flex; /* Display search container in navbar */
+        margin-left: 20px; /* Add margin to the left */
+        margin-right: auto; /* Push to the right */
+        width: 500px; /* Adjust width to fit between logo and burger menu */
+    }
+}
+
+/* Responsive Design for Navbar */
+@media (max-width: 430px) {
+    .navbar {
+        padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-brand .logo {
+        width: 134px;
+        height: 30px;
+    }
+
+    .signup-button {
+        width: 84px;
+        height: 32px;
+        border-radius: 8px;
+        margin-left: 5px;
     }
 
     .navbar-toggler {
         border: none;
+        margin-left: auto; /* Place the burger bar to the right */
     }
 
     .navbar-toggler-icon {
@@ -127,23 +213,50 @@
 
     .navbar-collapse .nav-item {
         width: 100%;
+        margin-bottom: 10px;
     }
 
     .navbar-collapse .nav-link {
         text-align: center;
+        width: 100%;
     }
 
     .navbar-header {
         display: flex;
         justify-content: space-between;
         width: 100%;
+        align-items: center;
     }
 
-    .navbar-collapse .search-container {
+    .navbar-nav {
         display: flex;
-        margin-top: 20px; /* Adjust spacing if needed */
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
     }
 
+    .navbar-collapse .nav-link.active {
+        background-color: #023c5b; /* Active background color for responsive mode */
+    }
 
-  
+    .search-container-desktop {
+        display: none;
+    }
+
+    .search-container-responsive {
+        display: flex; /* Display search container in navbar */
+        margin-right: auto; /* Push to the right */
+        width: 150px; /* Adjust width to fit between logo and burger menu */
+    }
+
+    .search-bar {
+        flex-grow: 1;
+        border: none;
+        outline: none;
+        font-family: Poppins, sans-serif;
+        font-size: 10.9px;
+        color: #757575;
+        padding-left: 10px;
+    }
 }
+
