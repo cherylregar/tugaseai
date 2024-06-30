@@ -58,8 +58,11 @@
 
                 <div class="bjcon2">
                         <p class="tulewaste">E-Waste</p>
-                            <img src="{{ asset('images/ewaste.png') }}" alt="Foto Ewaste" class ="ewastefoto">
+                            <img src="{{ asset('images/ewastenew.png') }}" alt="Foto Ewaste" class ="ewastefoto">
+                        <p class="qewaste"> Punya sampah elektronik?  </p>
+                        <p class="descewaste"> Limbah elektronik yang dibuang sembarangan dapat mencemari lingkungan. Pelajari cara pilhanya!  </p>     
                 </div>
+
             </div>
          
             
