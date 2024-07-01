@@ -6,7 +6,7 @@
             </a>
             <div class="search-container search-container-responsive">
                 <i class="fas fa-search search-icon"></i>
-                <input type="text" class="search-bar" placeholder="Cari kampus kamu disini!">
+                <input type="text" class="search-bar" placeholder="Cari kampus">
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -24,7 +24,7 @@
             </ul>
             <div class="search-container search-container-desktop">
                 <i class="fas fa-search search-icon"></i>
-                <input type="text" class="search-bar" placeholder="Cari kampus kamu disini!">
+                <input type="text" class="search-bar" placeholder="Cari kampus">
             </div>
             <ul class="navbar-nav ml-auto align-items-center"> <!-- Add align-items-center class -->
                 <li class="nav-item">
