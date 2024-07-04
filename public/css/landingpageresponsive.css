@@ -843,6 +843,112 @@
     }
         
 
+    .daftarevent {
+        width: 100%;
+        height: 450px;
+        flex-shrink: 0;
+        background: #0077B6;
+        position: relative;
+    }
+
+    .daftarevent .background-image {
+        width: 467px;
+        height: 429px;
+        flex-shrink: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .tulisanevent {
+        width: 590px;
+        height: 194px;
+        flex-shrink: 0;
+        color: #F5F5F5;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin: auto;
+        position: relative;
+        top: 40px;
+        line-height: 1.3; /* Sesuaikan spasi antar baris */
+
+    }
+
+    .buttondaftarevent {
+        width: 228px;
+        height: 46px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        border: 1px solid #757575;
+        background: #F3CA4D;
+        color: #0077B6;
+        top: 1px;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        cursor: pointer;
+        justify-content: center;
+        line-height: 46px;
+    }
+
+    .tulisantersedia {
+        color: #F5F5F5;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 19px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin: auto;
+        position: relative;
+        top: 20px;
+        justify-content: center;
+    }
+
+    .jenisevent {
+        width: 748px;
+        height: 200px;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+        position: relative;
+        top: 30px;
+    }
+
+    .detailevent {
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fotoevent {
+        width: 227px;
+        height: 125px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        background: #FFF;
+    }
+
+    .judulevent {
+        color: #FFF;
+        font-family: Poppins;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+        margin-top: 10px;
+    }
+
+
 }
 
 
@@ -866,6 +972,7 @@
         opacity: 0.2;
         z-index: -1;
     }
+
     .content {
         width: auto;
         padding-top: 70px;
@@ -1223,7 +1330,7 @@
     }
 
     .caramilah-button {
-        width: 258px;
+        width: 252px;
         height: 46px;
         flex-shrink: 0;
         border-radius: 20px;
@@ -1277,7 +1384,8 @@
     }
 
     .daftarwp {
-        width: 258px;
+        padding: 5px;
+        width: 220px;
         height: 46px;
         flex-shrink: 0;
         border-radius: 20px;
@@ -1306,6 +1414,111 @@
         font-weight: 500;
         line-height: normal;
         margin-top: 20px;
+    }
+
+    .daftarevent {
+        width: 100%;
+        height: 450px;
+        flex-shrink: 0;
+        background: #0077B6;
+        position: relative;
+    }
+
+    .daftarevent .background-image {
+        width: 367px;
+        height: 329px;
+        flex-shrink: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .tulisanevent {
+        width: 300px;
+        height: 194px;
+        flex-shrink: 0;
+        color: #F5F5F5;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin: auto;
+        position: relative;
+        top: 40px;
+        line-height: 1.3; /* Sesuaikan spasi antar baris */
+
+    }
+
+    .buttondaftarevent {
+        width: 208px;
+        height: 46px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        border: 1px solid #757575;
+        background: #F3CA4D;
+        color: #0077B6;
+        top: 1px;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        cursor: pointer;
+        justify-content: center;
+        line-height: 46px;
+    }
+
+    .tulisantersedia {
+        color: #F5F5F5;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 19px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin: auto;
+        position: relative;
+        top: 20px;
+        justify-content: center;
+    }
+
+    .jenisevent {
+        width: 348px;
+        height: 200px;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+        position: relative;
+        top: 30px;
+    }
+
+    .detailevent {
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fotoevent {
+        width: 100px;
+        height: 100px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        background: #FFF;
+    }
+
+    .judulevent {
+        color: #FFF;
+        font-family: Poppins;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+        margin-top: 10px;
     }
         
 

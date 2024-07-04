@@ -168,6 +168,31 @@
         </div>
     </div>
 
+    <div class="daftarevent">
+        <img src="{{ asset('images/tbin.png') }}" alt="Tbin" class="background-image">
+        <div class="tulisanevent">
+            Kami dapat mengelola sampah di Event Anda, daftarkan event Anda sekarang juga!
+        </div>
+        <div class="buttondaftarevent">
+            Daftarkan Event
+        </div>
+        <div class="tulisantersedia"> Tersedia untuk: </div>
+        <div class="jenisevent">
+            <div class="detailevent">
+                <div class="fotoevent"></div>
+                <div class="judulevent">Event Kampus</div>
+            </div>
+            <div class="detailevent">
+                <div class="fotoevent"></div>
+                <div class="judulevent">Event Kampus</div>
+            </div>
+            <div class="detailevent">
+                <div class="fotoevent"></div>
+                <div class="judulevent">Event Kampus</div>
+            </div>
+        </div>
+    </div>
+
     
 
 
