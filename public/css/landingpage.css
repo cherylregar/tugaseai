@@ -268,167 +268,348 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
     margin-left: 20px; /* Space between logo and text */
 }
 
+/* Additional styles for SDGs description section */
 
-
-/* Responsive styles */
-
-@media (max-width: 430px) {
-    
-    .content {
-        width: 500px;
-    }
-    .containerutama {
-        width: 100%;
-    }
-
-    .jenisdijual {
-        display: contents;
-        justify-content: space-around;
-        width: 100%;
-    }
-
-    .containerawal p {
-        color: #FFF;
-        font-family: 'Poppins', sans-serif;
-        font-size: 30px;
-        font-weight: 600;
-        margin: 0;
-        line-height: 1.2;
-        margin: 5px;
-    }
-
-    .containerawal .highlight {
-        color: #F3CA4D;
-    }
-
-    .keterangan {
-        width: 451px;
-        color: #03669B;
-        text-align: center;
-        font-family: 'Poppins', sans-serif;
-        font-size: 12px;
-        font-style: italic;
-        font-weight: 300;
-        line-height: normal;
-    }
-
-    .tulisansdgs {
-        color: #03669B;
-        font-family: 'Poppins', sans-serif;
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-        margin-left: 20px; /* Space between logo and text */
-        line-height: 1.2; /* Sesuaikan spasi antar baris */
-    }
-
-    .sdgs {
-        width: 455px;
-        height: auto;
-        flex-shrink: 0;
-        background: #F3CA4D;
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-left: 30px;
-        padding-right: 30px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        
-    }
-
-    .sdgslogo {
-        width: 43px;
-        height: 43px;
-        flex-shrink: 0;
-    }
-
+.sdgsdesc {
+    width: 100%;
+    height: 251px;
+    flex-shrink: 0;
+    background: #03669B;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-@media (max-width: 820px) {
+.sdgspoint {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+}
 
-    .content {
-        width: auto;
-        padding-top: 70px;
+.fotopsdgs {
+    width: 193px;
+    height: 193px;
+    flex-shrink: 0;
+}
+
+.descgoal {
+    width: 289px;
+    color: #FFF;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    margin-left: 40px;
+  }
+
+
+  .ecocontainer {
+    width: 100%;
+    height: 580px;
+    flex-shrink: 0;
+    flex-direction: column;
+    background: #F3CA4D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     }
 
-    .boxjualan {
-        display: contents;
-        justify-content: center;
-        text-align: center;
-        flex-wrap: wrap; /* Pastikan item-wrap di layar yang lebih kecil */
-        margin-top: 5px;
-    }
 
+   .iconecoheroes {
+    width: 70.481px;
+    height: 75.259px;
+    align-items: center;
+    margin-top: 15px;
+    justify-content: space-around;
+   }
 
+   .tulecoh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Sesuaikan tinggi sesuai kebutuhan */
+    margin-top: 15px; /* Sesuaikan margin sesuai kebutuhan */
+    text-align: center;
+}
 
-        .bjcon1, .bjcon2 {
-            width: 85%;
-            height: fit-content; /* Sesuaikan lebar untuk layar yang lebih kecil */
-            margin-right: 0;
-            margin-bottom: 20px; /* Ruang antara bjcon1 dan bjcon2 di tampilan mobile */
-        }
-
-    .rectangle1 {
-        width: 182px;
-        height: 158.2px;
-        flex-shrink: 0;
-        border-radius: 20px;
-        background: #03669B;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        margin-bottom: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .rectanglea {
-        width: 182px;
-        height: 36.4px;
-        flex-shrink: 0;
-        border-radius: 20px;
-        background: #FFF;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .jenisdijual {
-        justify-content: space-around;
-        width: 100%;
-    }
-
-    .containerawal p {
-        color: #FFF;
-        font-family: 'Poppins', sans-serif;
-        font-size: 30px;
-        font-weight: 600;
-        margin: 0;
-        line-height: 1.2;
-        margin: 5px;
-    }
-
-    .containerawal .highlight {
-        color: #F3CA4D;
-    }
-
-    .tulisansdgs {
-        color: #03669B;
-        font-family: 'Poppins', sans-serif;
-        font-size: 28px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-        margin-left: 20px; /* Space between logo and text */
-        line-height: 1.2; /* Sesuaikan spasi antar baris */
-
-    }
+.tulecoh .italic {
+    color: #0077B6;
+    font-family: Poppins, sans-serif;
+    font-size: 58px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+    margin-right: 15px; 
 
     
 }
+
+.tulecoh .normal {
+    color: #0077B6;
+    font-family: Poppins, sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-right: 15px; 
+
+}
+
+.tulecoh .bold {
+    color: #0077B6;
+    font-family: Poppins, sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.listhero {
+    display: flex;
+    justify-content: center; /* Pusatkan container */
+    margin: 20px;
+}
+
+.userhero {
+    width: 380px;
+    height: 107px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #0077B6;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: center;
+
+}
+
+.fotohero {
+    width: 57px;
+    height: 57px;
+    background-color: #D9D9D9;
+    border-radius: 50%; /* Buat foto menjadi bulat */
+    margin-right: 20px; /* Jarak antara foto dan tulisan */
+}
+
+.infohero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.username {
+    color: #FFF;
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin-bottom: 5px; /* Jarak antara username dan weight */
+}
+
+.weight {
+    color: #FFF;
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.desccon  {
+    width: 834px;
+    height: 76px;
+    flex-shrink: 0;
+}
+
+
+.pdesccon {
+    color: #0077B6;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+
+.buttonleaderboard {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.buttonleaderboard .lihatleaderboard {
+    padding: 5px;
+    width: 220px;
+    height: 46px;
+    border-radius: 20px;
+    background: #0077B6;
+    color: #FFFF;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.caramemilah {
+    width: 100%;
+    height: 625px;
+    background: #0077B6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.milah-img {
+    width: 584px;
+    height: 509px;
+    flex-shrink: 0;
+}
+
+.detailajakan {
+    width: 609px;
+    height: 361px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.judulpelajari {
+    width: 539px;
+    height: 114px;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 20px;
+    line-height: 1.2; 
+}
+
+.descpelajari {
+    width: 414px;
+    height: 90px;
+    flex-shrink: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+.caramilah {
+    width: 258px;
+    height: 46px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caramilah-button {
+    width: 258px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 1px solid #757575;
+    background: #F3CA4D;
+    color: #0077B6;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.gabungwastepals {
+    width: 100%;
+    height: 386px;
+    flex-shrink: 0;
+    background: #F3CA4D;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding-left: 90px; 
+    padding-right: 90px;
+}
+
+.tulgabung {
+    text-align: left;
+}
+
+.tulgabung p {
+    margin: 0;
+}
+
+.tulgabung p:first-child {
+    color: #0077B6;
+    font-family: 'Poppins', sans-serif;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.wastepals {
+    color: #0077B6;
+    font-family: 'Poppins', sans-serif;
+    font-size: 58px;
+    font-style: italic;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.daftarwp {
+    width: 258px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 1px solid #757575;
+    background: #0077B6;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.descwpajak {
+    width: 527px;
+    height: 90px;
+    flex-shrink: 0;
+    color: #0077B6;
+    text-align: right;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+
+
 

@@ -260,3 +260,84 @@
         padding-left: 10px;
     }
 }
+
+
+
+@media (max-width: 991px) {
+    .navbar {
+        padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-brand .logo {
+        width: 134px;
+        height: 30px;
+    }
+
+    .signup-button {
+        width: 84px;
+        height: 32px;
+        border-radius: 8px; 
+    }
+
+    .navbar-toggler {
+        border: none;
+        margin-left: auto; /* Place the burger bar to the right */
+    }
+
+    .navbar-toggler-icon {
+        color: white !important;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+    }
+    
+
+    .navbar-collapse {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .navbar-collapse .nav-item {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .navbar-collapse .nav-link {
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar-header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar-collapse .nav-link.active {
+        background-color: #023c5b; /* Active background color for responsive mode */
+    }
+
+    .search-container-desktop {
+        display: none;
+    }
+
+    .search-container-responsive {
+        display: flex; /* Display search container in navbar */
+        margin-left: 20px; /* Add margin to the left */
+        margin-right: auto; /* Push to the right */
+        width: 500px; /* Adjust width to fit between logo and burger menu */
+    }
+}
