@@ -1,5 +1,10 @@
 /* Reset and General Styles */
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     font-family: 'Poppins', sans-serif !important;
     background-color: #0077B6; /* Warna latar belakang default */
@@ -835,7 +840,7 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
     height: 532px;
     flex-shrink: 0;
     border-radius: 20px;
-    background: #FFF;
+    background: #ffffff;
 }
 
 .tigaartikel {
@@ -860,7 +865,7 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
     height: 166px;
     flex-shrink: 0;
     border-radius: 20px;
-    background: #D9D9D9;
+    background: #ffffff;
     margin-right: 20px;
 }
 
@@ -872,4 +877,97 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
     line-height: normal;
     text-align: left;
     margin-left: 15px ;
+}
+
+.footer {
+    width: 100%;
+    height: 267px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0077B6; /* Adjust as needed */
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+
+.wmdansocmed {
+    width: 311px;
+    height: 158px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logowmfooter img {
+    width: 265px;
+    height: 59px;
+    flex-shrink: 0;
+}
+
+.lokasiwm {
+    color: #F5F5F5;
+    text-align: left;
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.logosocmed {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.logosocmed img {
+    width: 48px; /* Adjust size as needed */
+    height: 48px;
+    flex-shrink: 0;
+}
+
+.footerdetail {
+    display: flex;
+    gap: 10px; /* Adjust gap as needed */
+}
+
+.companycon, .ourservicescon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    height: 158px;
+    flex-shrink: 0;
+}
+
+.companycon .tulisanjudul, .ourservicescon .tulisanjudul {
+    color: #F5F5F5;
+    text-align: center;
+    font-family: Poppins, sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+.tulisanfooter {
+    color: #F5F5F5;
+    text-align: center;
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 5px;
+}
+
+.tulisanfooter a {
+    color: #F5F5F5;
+    text-decoration: none;
+}
+
+.tulisanfooter a:hover {
+    text-decoration: underline;
 }
