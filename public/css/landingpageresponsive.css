@@ -379,6 +379,7 @@
     }
     
     
+
     
 
 }
@@ -845,7 +846,7 @@
 
     .daftarevent {
         width: 100%;
-        height: 450px;
+        height: 500px;
         flex-shrink: 0;
         background: #0077B6;
         position: relative;
@@ -948,6 +949,156 @@
         margin-top: 10px;
     }
 
+
+
+    /* Styles for conartikel section */
+    .conartikel {
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
+        height: 950px;
+        border-bottom-left-radius: 140px;
+        border-bottom-right-radius: 140px;
+    }
+
+    .dalamanconartikel {
+        width: 100%;
+        height: 700px;
+        padding: 10px;
+        margin-top: 40px;
+
+    }
+
+    .artikel-header-1 {
+        color: #0077B6;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 0; /* Reduce the bottom margin */
+    }
+
+    .artikel-header-2 {
+        color: #0077B6;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 44px;
+        font-weight: 600;
+        line-height: normal;
+        margin-top: 0; /* Reduce the top margin */
+        margin-bottom: 40px;
+    }
+
+    .artikel-highlight {
+        color: #0077B6;
+        font-family: Poppins;
+        font-size: 44px;
+        font-style: italic;
+        font-weight: 800;
+        line-height: normal;
+    }
+
+    .conisiartikel {
+        width: 765px;
+        height: 692px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+    }
+
+    .mainartikeltitle {
+        width: 760px;
+        height: 432px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .judulartikelmain {
+        width: 344px;
+        height: 432px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .judulartikel1 {
+        width: 292px;
+        height: 340px;
+        flex-shrink: 0;
+        color: #0077B6;
+        font-family: Poppins;
+        font-size: 59px;
+        font-weight: 800;
+        text-align: left;
+        line-height: 1.2;
+
+    }
+
+    .ajakanartikel {
+        width: 267px;
+        color: #0077B6;
+        font-family: Poppins;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: normal;
+        text-align: left;
+    }
+
+    .fotoutamaartikel {
+        width: 357px;
+        height: 432px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        background: #FFF;
+        justify-content: center;
+    }
+
+    .tigaartikel {
+        width: 760px;
+        height: 232px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: left;
+        margin-top: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+
+    .tigasatu {
+        width: 200px;
+        height: 169px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .fotoartikelkecil {
+        width: 130px;
+        height: 130px;
+        border-radius: 20px;
+        background: #D9D9D9;
+    }
+
+    .judulartikelkecil {
+        width: 150px;
+        color: #0077B6;
+        font-family: Poppins;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: normal;
+        text-align: center;
+        margin-left: -20px;
+        margin-top: 10px;
+    }
+
+        
 
 }
 
