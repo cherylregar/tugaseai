@@ -1032,10 +1032,11 @@
         flex-shrink: 0;
         color: #0077B6;
         font-family: Poppins;
-        font-size: 39px;
+        font-size: 44px;
         font-weight: 800;
         text-align: left;
         line-height: 1.2;
+        word-break: break-word;
 
     }
 
@@ -1837,7 +1838,7 @@
         flex-shrink: 0;
         display: flex;
         flex-direction: row;
-        margin-top: 50px;
+        margin-top: 70px;
     }
 
     .judulartikelmain {
@@ -1852,25 +1853,21 @@
 
     .judulartikel1 {
         width: 102px;
-        height: 182px;
+        height: 302px;
         flex-shrink: 0;
         color: #0077B6;
         font-family: Poppins;
-        font-size: 30px;
+        font-size: 25px;
         font-weight: 800;
         text-align: left;
         line-height: 1.2;
+        justify-content: center;
+        padding-top: 35px;
 
     }
 
     .ajakanartikel {
-        width: 102px;
-        color: #0077B6;
-        font-family: Poppins;
-        font-size: 20px;
-        font-weight: 600;
-        line-height: normal;
-        text-align: left;
+        display: none;
     }
 
     .fotoutamaartikel {
@@ -1890,7 +1887,14 @@
         flex-direction: row;
         margin-top: 30px;
         justify-content: center;
-        margin-left: 10px
+        margin-left: 40px
+
+    }
+
+    .tigaartikel img {
+        width: 120px;
+        height: 120px;
+        
 
     }
 
@@ -1901,6 +1905,7 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+
     }
 
     .fotoartikelkecil {
@@ -1920,6 +1925,22 @@
         text-align: center;
         margin-top: 10px;
     }
+
+
+    .artikel-header-1,
+    .artikel-header-2,
+    .artikel-highlight,
+    .judulartikel1,
+    .ajakanartikel,
+    .judulartikelkecil {
+    color: #0077B6;
+    font-family: Poppins;
+    hyphens: auto;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    }
+
+    
 
     .footer {
         width: 100%;
