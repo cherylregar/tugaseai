@@ -736,8 +736,6 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
     height: 889px;
     flex-shrink: 0;
     background: #F3CA4D;
-    border-bottom-left-radius: 300px;
-    border-bottom-right-radius: 300px;
 }
 
 
@@ -795,13 +793,16 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
 }
 
 .mainartikeltitle {
-    width: 760px;
-    height: 532px;
+    width: 750px;
+    height: 572px;
     flex-shrink: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    margin-right: 50px;
+    border-radius: 20px;
 }
 
 .judulartikelmain {
@@ -858,7 +859,7 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
 
 .tigaartikel {
     width: 404px;
-    height: 532px;
+    height: 572px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -867,10 +868,14 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
 
 .tigasatu {
     width: 404px;
-    height: 169px;
+    height: 180px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    
 }
 
 
@@ -996,3 +1001,6 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
 .tulisanfooter a:hover {
     text-decoration: underline;
 }
+
+
+

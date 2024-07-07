@@ -379,10 +379,27 @@
     }
     
     
+    .tigasatu {
+        width: 404px;
+        height: 180px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        background-color: white;
+        border-radius: 20px;
+        padding: 10px;
+        
+    }
+
+
 
     
 
 }
+
+
+
+
 
 @media (max-width: 820px) {
 
@@ -957,8 +974,6 @@
         padding-right: 30px;
         text-align: center;
         height: 950px;
-        border-bottom-left-radius: 140px;
-        border-bottom-right-radius: 140px;
     }
 
     .dalamanconartikel {
@@ -1004,31 +1019,33 @@
         height: 692px;
         flex-shrink: 0;
         display: flex;
-        align-items: left;
+        align-items: center;
         flex-direction: column;
     }
 
     .mainartikeltitle {
-        width: 760px;
-        height: 432px;
+        width: 730px;
+        height: 472px;
         flex-shrink: 0;
         display: flex;
         flex-direction: row;
         align-items: center;
+        margin-left: 10px;
     }
 
     .judulartikelmain {
         width: 344px;
-        height: 432px;
+        height: 402px;
         flex-shrink: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding-left: 20px;
     }
 
     .judulartikel1 {
         width: 292px;
-        height: 340px;
+        height: 300px;
         flex-shrink: 0;
         color: #0077B6;
         font-family: Poppins;
@@ -1051,7 +1068,7 @@
     }
 
     .fotoutamaartikel {
-        width: 357px;
+        width: 327px;
         height: 432px;
         flex-shrink: 0;
         border-radius: 20px;
@@ -1059,26 +1076,39 @@
         justify-content: center;
     }
 
+    .fotoutamaartikel img {
+        max-width: 500px; /* Gambar tidak melebihi ukuran div */
+        height: 532px; /* Menyesuaikan tinggi sesuai aspek rasio */
+        border-radius: 20px; /* Memastikan border-radius tetap berlaku */
+    }
+    
+
     .tigaartikel {
-        width: 660px;
-        height: 232px;
+        width: 730px;
+        height: 192px;
         flex-shrink: 0;
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin-top: 10px;
-        margin-right: 40px;
+        justify-content: space-around;
+        margin-right: 38px;
+
 
 
     }
 
     .tigasatu {
-        width: 170px;
-        height: 169px;
+        width: 237px;
+        height: 139px;
         flex-shrink: 0;
         display: flex;
         align-items: center;
         flex-direction: row;
+        background-color: white;
+        border-radius: 20px;
+        padding: 10px;
+        
+
     }
 
     .fotoartikelkecil {
@@ -1778,16 +1808,14 @@
         padding-left: 30px;
         padding-right: 30px;
         text-align: center;
-        height: 870px;
-        border-bottom-left-radius: 140px;
-        border-bottom-right-radius: 140px;
+        height: 750px;
     }
 
     .dalamanconartikel {
         width: 100%;
-        height: 600px;
+        height: 500px;
         padding: 10px;
-        margin-top: 30px;
+        margin-top: 5px;
 
     }
 
@@ -1833,12 +1861,17 @@
     }
 
     .mainartikeltitle {
-        width: 40px;
-        height: 320px;
+        width: 395px;
+        height: 360px;
         flex-shrink: 0;
         display: flex;
         flex-direction: row;
         margin-top: 70px;
+        align-items: center;
+        background-color: white;
+        margin-right: 10px;
+        border-radius: 20px;
+        justify-content: center;
     }
 
     .judulartikelmain {
@@ -1879,13 +1912,20 @@
         justify-content: center;
     }
 
+    .fotoutamaartikel img {
+        max-width: 290px; 
+        height: 532px; 
+        border-radius: 20px; 
+    }
+    
+
     .tigaartikel {
         width: 30px;
         height: 232px;
         flex-shrink: 0;
         display: flex;
         flex-direction: row;
-        margin-top: 30px;
+        margin-top: -15px;
         justify-content: center;
         margin-left: 40px
 
@@ -1899,13 +1939,13 @@
     }
 
     .tigasatu {
-        width: 120px;
-        height: 169px;
+        width: 130px;
+        height: 179px;
         flex-shrink: 0;
         display: flex;
         align-items: center;
         flex-direction: column;
-
+        margin-left: 5px;
     }
 
     .fotoartikelkecil {
@@ -1916,7 +1956,7 @@
     }
 
     .judulartikelkecil {
-        width: 110px;
+        width: 120px;
         color: #0077B6;
         font-family: Poppins;
         font-size: 12px;
@@ -1944,7 +1984,7 @@
 
     .footer {
         width: 100%;
-        height: 267px;
+        height: 187px;
         flex-shrink: 0;
         display: flex;
         justify-content: space-between;
