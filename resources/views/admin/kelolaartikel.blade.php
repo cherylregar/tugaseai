@@ -17,9 +17,12 @@
             <div class="tulisanartmain">
                 PILIH ID ARTIKEL UNTUK DITAMPILKAN:
             </div>
-            <div class="dropdownmainart">
-                <select>
+            <div class="dropdownmainart" alt="artikelmain">
+                <select name="main_article">
                     <option>Pilih ID Artikel</option>
+                    @foreach($articles as $article)
+                        <option value="{{ $article->idArtikel }}">{{ $article->idArtikel }}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
@@ -29,32 +32,19 @@
                 <span>Three Article</span>
             </div>
 
-            <div class="tulisantigaart">
-                PILIH ID ARTIKEL UNTUK ARTIKEL #1
-            </div>
-            <div class="dropdowntigaart">
-                <select>
-                    <option>Pilih ID Artikel #1</option>
-                </select>
-            </div>
-
-            <div class="tulisantigaart">
-                PILIH ID ARTIKEL UNTUK ARTIKEL #2
-            </div>
-            <div class="dropdowntigaart">
-                <select>
-                    <option>Pilih ID Artikel #2</option>
-                </select>
-            </div>
-
-            <div class="tulisantigaart">
-                PILIH ID ARTIKEL UNTUK ARTIKEL #3
-            </div>
-            <div class="dropdowntigaart">
-                <select>
-                    <option>Pilih ID Artikel #3</option>
-                </select>
-            </div>
+            @for ($i = 1; $i <= 3; $i++)
+                <div class="tulisantigaart">
+                    PILIH ID ARTIKEL UNTUK ARTIKEL #{{ $i }}
+                </div>
+                <div class="dropdowntigaart" alt="artikel{{ $i }}">
+                    <select name="article_{{ $i }}">
+                        <option>Pilih ID Artikel #{{ $i }}</option>
+                        @foreach($articles as $article)
+                            <option value="{{ $article->idArtikel }}">{{ $article->idArtikel }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            @endfor
         </div>
 
         <button class="simpanubahartikel">

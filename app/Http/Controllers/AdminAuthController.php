@@ -82,10 +82,10 @@ class AdminAuthController extends Controller
 
     public function kelolaartikel()
     {
-
-    return view('admin.kelolaartikel');
-    
+    $articles = \App\Models\Article::all(); // Ensure you import the Article model at the top of the file
+    return view('admin.kelolaartikel', compact('articles'));
     }
+
 
     // Other methods if any
 }
