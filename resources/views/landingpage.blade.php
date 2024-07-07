@@ -196,8 +196,6 @@
     </div>
 
     
-
-
     <div class="conartikel">
     <div class="dalamanconartikel">
         <p class="artikel-header-1">Ingin mengenal lingkungan lebih dalam?</p>
@@ -205,30 +203,39 @@
         <div class="conisiartikel">
             <div class="mainartikeltitle">
                 <div class="judulartikelmain">
-                    <div class="judulartikel1" alt="judulartikelmain">Bumi itu Datar atau Bulat?</div>
+                    <div class="judulartikel1" alt="judulartikelmain">
+                        {{ $mainArticle->judulArtikel ?? 'Judul Artikel Tidak Tersedia' }}
+                    </div>
                     <div class="ajakanartikel">Ayo jelajahi lingkungan lebih dalam!</div>
                 </div>
-                <div class="fotoutamaartikel" alt="fotoartikelmain"></div>
+                <div class="fotoutamaartikel" alt="fotoartikelmain">
+                    @if ($mainArticle->fotoArtikel)
+                        <img src="{{ asset('storage/fotos/' . $mainArticle->fotoArtikel) }}" alt="Foto Artikel Utama">
+                    @else
+                        <p>Foto tidak tersedia</p>
+                    @endif
+                </div>
             </div>
             <div class="tigaartikel">
-                <div class="tigasatu">
-                    <div class="fotoartikelkecil" alt="fotoartikel1"></div>
-                    <div class="judulartikelkecil" alt="judulartikelk1">Belajar dari Kota Balikpapan yang meraih Adipura</div>
-                </div>
-                <div class="tigasatu">
-                    <div class="fotoartikelkecil" alt="fotoartikel2"></div>
-                    <div class="judulartikelkecil" alt="judulartikelk2">Upaya Sekolah Ramah Lingkungan di Jakarta</div>
-                </div>
-                <div class="tigasatu">
-                    <div class="fotoartikelkecil" alt="fotoartikel3"></div>
-                    <div class="judulartikelkecil" alt="judulartikelk3">Inovasi Daur Ulang Plastik di Bandung</div>
-                </div>
+                @foreach ([$article1, $article2, $article3] as $article)
+                    <div class="tigasatu">
+                        <div class="fotoartikelkecil" alt="fotoartikel{{ $loop->index + 1 }}">
+                            @if ($article->fotoArtikel)
+                                <img src="{{ asset('storage/fotos/' . $article->fotoArtikel) }}" alt="Foto Artikel Kecil">
+                            @else
+                                <p>Foto tidak tersedia</p>
+                            @endif
+                        </div>
+                        <div class="judulartikelkecil" alt="judulartikel{{ $loop->index + 1 }}">
+                            {{ $article->judulArtikel ?? 'Judul Artikel Tidak Tersedia' }}
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
-    </div>    
     </div>
+</div>
 
- 
     <div class="footer">
         <div class="wmdansocmed">
             <div class="logowmfooter">

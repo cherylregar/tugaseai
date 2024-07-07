@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\SampahJualController;
-
+use App\Http\Controllers\ArticleController;
 
 // Landing page route
 Route::get('/', [LandingPageController::class, 'index'])->name('landingpage');
@@ -44,11 +44,10 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
 
     // Route untuk form submission
     Route::post('/storeproduksampah', [SampahJualController::class, 'store'])->name('admin.storeproduksampah');
-
     Route::delete('/sampahjual/{idSampah}', [SampahJualController::class, 'destroy'])->name('sampahjual.destroy');
 
-
-
+    // Update landing page articles route
+    Route::post('/update-landing-page', [ArticleController::class, 'updateLandingPageArticles'])->name('admin.update.landingpage');
 
     // Admin logout route
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');

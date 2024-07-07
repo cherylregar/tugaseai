@@ -3,32 +3,32 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Article;
+use App\Models\SelectedArticle;
 
 class ArticleController extends Controller
 {
-    public function index()
+    public function updateLandingPageArticles(Request $request)
     {
-        $articles = Article::all();
-        return view('admin.kelolaartikel', compact('articles'));
-    }
-
-    public function update(Request $request)
-    {
+        // Validasi request
         $request->validate([
-            'main_article' => 'nullable|exists:articles,idArtikel',
-            'article1' => 'nullable|exists:articles,idArtikel',
-            'article2' => 'nullable|exists:articles,idArtikel',
-            'article3' => 'nullable|exists:articles,idArtikel',
+            'main_article' => 'required|string',
+            'article_1' => 'required|string',
+            'article_2' => 'required|string',
+            'article_3' => 'required|string',
         ]);
 
-        // Simpan pilihan artikel ke dalam database atau config
-        // Misalnya simpan ke dalam config menggunakan cache
-        cache()->put('main_article', $request->main_article);
-        cache()->put('article1', $request->article1);
-        cache()->put('article2', $request->article2);
-        cache()->put('article3', $request->article3);
+        // Simpan data yang dipilih ke dalam database
+        $selectedArticles = SelectedArticle::updateOrCreate(
+            ['id' => 1], // Atau gunakan id yang sesuai jika ada
+            [
+                'main_article' => $request->main_article,
+                'article_1' => $request->article_1,
+                'article_2' => $request->article_2,
+                'article_3' => $request->article_3,
+            ]
+        );
 
-        return back()->with('success', 'Perubahan Berhasil');
+        // Setelah berhasil menyimpan, alihkan ke halaman landing atau berikan respons yang sesuai
+        return redirect()->route('landingpage')->with('success', 'Artikel untuk landing page berhasil diperbarui.');
     }
 }
