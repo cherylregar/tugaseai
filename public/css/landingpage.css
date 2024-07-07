@@ -733,7 +733,7 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
 
 .conartikel {
     width: 100%;
-    height: 889px;
+    height: 809px;
     flex-shrink: 0;
     background: #F3CA4D;
 }
@@ -812,6 +812,7 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 8px;
 }
 
 .judulartikel1 {
@@ -833,7 +834,7 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
     color: #0077B6;
     font-family: Poppins;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 400;
     line-height: normal;
     text-align: left;
 }
@@ -847,13 +848,13 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Menghindari gambar melewati batas */
+    overflow: hidden; 
 }
 
 .fotoutamaartikel img {
-    max-width: 900px; /* Gambar tidak melebihi ukuran div */
-    height: 532px; /* Menyesuaikan tinggi sesuai aspek rasio */
-    border-radius: 20px; /* Memastikan border-radius tetap berlaku */
+    max-width: 900px; 
+    height: 532px; 
+    border-radius: 20px; 
 }
 
 
@@ -974,7 +975,7 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
 }
 
 .companycon .tulisanjudul, .ourservicescon .tulisanjudul {
-    color: #F5F5F5;
+    color: #F3CA4D;
     text-align: center;
     font-family: Poppins, sans-serif;
     font-size: 25px;
