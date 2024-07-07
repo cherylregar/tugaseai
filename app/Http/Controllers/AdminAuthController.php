@@ -80,5 +80,12 @@ class AdminAuthController extends Controller
         return redirect()->route('loginadmin');
     }
 
+    public function kelolaartikel()
+    {
+
+    return view('admin.kelolaartikel');
+    
+    }
+
     // Other methods if any
 }

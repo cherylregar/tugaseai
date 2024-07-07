@@ -205,10 +205,10 @@
         <div class="conisiartikel">
             <div class="mainartikeltitle">
                 <div class="judulartikelmain">
-                    <div class="judulartikel1">Bumi itu Datar atau Bulat?</div>
+                    <div class="judulartikel1" alt="judulartikelmain">Bumi itu Datar atau Bulat?</div>
                     <div class="ajakanartikel">Ayo jelajahi lingkungan lebih dalam!</div>
                 </div>
-                <div class="fotoutamaartikel"></div>
+                <div class="fotoutamaartikel" alt="fotoartikelmain"></div>
             </div>
             <div class="tigaartikel">
                 <div class="tigasatu">

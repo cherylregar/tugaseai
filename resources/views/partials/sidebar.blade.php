@@ -33,6 +33,9 @@
         <li class="{{ request()->routeIs('admin.tambah-produk-sampah') ? 'active' : '' }}">
             <a href="{{ route('admin.tambah-produk-sampah') }}">Tambah Produk Sampah</a>
         </li>
+        <li class="{{ request()->routeIs('admin.kelola-artikel') ? 'active' : '' }}">
+            <a href="{{ route('admin.kelola-artikel') }}">Kelola Artikel</a>
+        </li>
     </ul>
     <form action="{{ route('admin.logout') }}" method="POST">
         @csrf

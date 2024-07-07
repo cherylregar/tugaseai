@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\SampahJualController;
 
+
 // Landing page route
 Route::get('/', [LandingPageController::class, 'index'])->name('landingpage');
 
@@ -39,11 +40,15 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     Route::get('/pengajuan-event', [AdminAuthController::class, 'pengajuanEvent'])->name('admin.pengajuan-event');
     Route::get('/tambah-produk-sampah', [AdminAuthController::class, 'tambahProdukSampah'])->name('admin.tambah-produk-sampah');
     Route::get('/pengajuan-setorsampah', [AdminAuthController::class, 'pengajuanSetorSampah'])->name('admin.pengajuansetorsampah');
+    Route::get('/kelola-artikel', [AdminAuthController::class, 'kelolaartikel'])->name('admin.kelola-artikel');
 
     // Route untuk form submission
     Route::post('/storeproduksampah', [SampahJualController::class, 'store'])->name('admin.storeproduksampah');
 
     Route::delete('/sampahjual/{idSampah}', [SampahJualController::class, 'destroy'])->name('sampahjual.destroy');
+
+
+
 
     // Admin logout route
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
