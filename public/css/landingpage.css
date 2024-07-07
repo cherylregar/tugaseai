@@ -801,11 +801,12 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 
 .judulartikelmain {
     width: 344px;
-    height: 532px;
+    height: 200px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -814,14 +815,15 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
 
 .judulartikel1 {
     width: 292px;
-    height: 340px;
+    height: 200px;
     flex-shrink: 0;
     color: #0077B6;
     font-family: Poppins;
-    font-size: 59px;
+    font-size: 39px;
     font-weight: 800;
     text-align: left;
     line-height: 1.2;
+    margin-bottom: 40px;
 
 }
 
@@ -841,7 +843,18 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
     flex-shrink: 0;
     border-radius: 20px;
     background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Menghindari gambar melewati batas */
 }
+
+.fotoutamaartikel img {
+    max-width: 900px; /* Gambar tidak melebihi ukuran div */
+    height: 532px; /* Menyesuaikan tinggi sesuai aspek rasio */
+    border-radius: 20px; /* Memastikan border-radius tetap berlaku */
+}
+
 
 .tigaartikel {
     width: 404px;
@@ -860,14 +873,22 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
     align-items: center;
 }
 
+
 .fotoartikelkecil {
     width: 166px;
     height: 166px;
     flex-shrink: 0;
     border-radius: 20px;
     background: #ffffff;
-    margin-right: 20px;
+    overflow: hidden; /* Menghindari gambar melewati batas */
 }
+
+.fotoartikelkecil img {
+    max-width: 400px; /* Gambar tidak melebihi ukuran div */
+    height: 166px; /* Menyesuaikan tinggi sesuai aspek rasio */
+    border-radius: 20px; /* Memastikan border-radius tetap berlaku */
+}
+
 
 .judulartikelkecil {
     color: #0077B6;
