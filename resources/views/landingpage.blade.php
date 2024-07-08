@@ -197,44 +197,44 @@
 
     
     <div class="conartikel">
-    <div class="dalamanconartikel">
-        <p class="artikel-header-1">Ingin mengenal lingkungan lebih dalam?</p>
-        <p class="artikel-header-2">Pelajari lewat <span class="artikel-highlight">Artikel</span> kami</p>
-        <div class="conisiartikel">
-            <div class="mainartikeltitle">
-                <div class="judulartikelmain">
-                    <div class="judulartikel1" alt="judulartikelmain">
-                        {{ $mainArticle->judulArtikel ?? 'Judul Artikel Tidak Tersedia' }}
-                    </div>
-                    <div class="ajakanartikel">Ayo jelajahi lingkungan lebih dalam!</div>
-                </div>
-                <div class="fotoutamaartikel" alt="fotoartikelmain">
-                    @if ($mainArticle->fotoArtikel)
-                        <img src="{{ asset('storage/fotos/' . $mainArticle->fotoArtikel) }}" alt="Foto Artikel Utama">
-                    @else
-                        <p>Foto tidak tersedia</p>
-                    @endif
-                </div>
-            </div>
-            <div class="tigaartikel">
-                @foreach ([$article1, $article2, $article3] as $article)
-                    <div class="tigasatu">
-                        <div class="fotoartikelkecil" alt="fotoartikel{{ $loop->index + 1 }}">
-                            @if ($article->fotoArtikel)
-                                <img src="{{ asset('storage/fotos/' . $article->fotoArtikel) }}" alt="Foto Artikel Kecil">
-                            @else
-                                <p>Foto tidak tersedia</p>
-                            @endif
+        <div class="dalamanconartikel">
+            <p class="artikel-header-1">Ingin mengenal lingkungan lebih dalam?</p>
+            <p class="artikel-header-2">Pelajari lewat <span class="artikel-highlight">Artikel</span> kami</p>
+            <div class="conisiartikel">
+                <div class="mainartikeltitle">
+                    <div class="judulartikelmain">
+                        <div class="judulartikel1" alt="judulartikelmain">
+                            {{ $mainArticle->judulArtikel ?? 'Judul Artikel Tidak Tersedia' }}
                         </div>
-                        <div class="judulartikelkecil" alt="judulartikel{{ $loop->index + 1 }}">
-                            {{ $article->judulArtikel ?? 'Judul Artikel Tidak Tersedia' }}
-                        </div>
+                        <div class="ajakanartikel">Ayo jelajahi lingkungan lebih dalam!</div>
                     </div>
-                @endforeach
+                    <div class="fotoutamaartikel" alt="fotoartikelmain">
+                        @if ($mainArticle->fotoArtikel)
+                            <img src="{{ asset('storage/fotos/' . $mainArticle->fotoArtikel) }}" alt="Foto Artikel Utama" onclick="redirectToArticle('{{ $mainArticle->idArtikel }}')">
+                        @else
+                            <p>Foto tidak tersedia</p>
+                        @endif
+                    </div>
+                </div>
+                <div class="tigaartikel">
+                    @foreach ([$article1, $article2, $article3] as $article)
+                        <div class="tigasatu">
+                            <div class="fotoartikelkecil" alt="fotoartikel{{ $loop->index + 1 }}">
+                                @if ($article->fotoArtikel)
+                                    <img src="{{ asset('storage/fotos/' . $article->fotoArtikel) }}" alt="Foto Artikel Kecil" onclick="redirectToArticle('{{ $article->idArtikel }}')">
+                                @else
+                                    <p>Foto tidak tersedia</p>
+                                @endif
+                            </div>
+                            <div class="judulartikelkecil" alt="judulartikel{{ $loop->index + 1 }}">
+                                {{ $article->judulArtikel ?? 'Judul Artikel Tidak Tersedia' }}
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
     <div class="footer">
@@ -266,5 +266,10 @@
         </div>
     </div>
 
-
+    <script>
+        function redirectToArticle(idArtikel) {
+            window.location.href = '/articlespages/' + idArtikel;
+        }
+    </script>
+    
 @endsection

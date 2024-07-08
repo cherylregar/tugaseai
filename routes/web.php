@@ -8,6 +8,8 @@ use App\Http\Controllers\ArticleController;
 
 // Landing page route
 Route::get('/', [LandingPageController::class, 'index'])->name('landingpage');
+Route::get('/articlespages/{idArtikel}', [ArticleController::class, 'show'])->name('articlespages.show');
+
 
 // About page route
 Route::get('/about', function () {

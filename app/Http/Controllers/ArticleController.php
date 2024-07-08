@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\SelectedArticle;
+use App\Models\Article;
 
 class ArticleController extends Controller
 {
@@ -30,5 +30,11 @@ class ArticleController extends Controller
 
         // Setelah berhasil menyimpan, alihkan ke halaman landing atau berikan respons yang sesuai
         return redirect()->route('landingpage')->with('success', 'Artikel untuk landing page berhasil diperbarui.');
+    }
+
+    public function show($idArtikel)
+    {
+        $article = Article::where('idArtikel', $idArtikel)->firstOrFail();
+        return view('articlespages', compact('article'));
     }
 }
