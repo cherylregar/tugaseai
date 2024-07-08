@@ -49,8 +49,40 @@ class ArticleController extends Controller
     public function edit($idArtikel)
     {
         $article = Article::findOrFail($idArtikel);
-        return view('editartikel', compact('article'));
+        return view('admin.editdataartikel', compact('article'));
     }
+    
+    public function update(Request $request, $idArtikel)
+    {
+    $request->validate([
+        'judulArtikel' => 'required|string|max:49',
+        'isiArtikel' => 'required|string',
+        'fotoArtikel' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
+
+    $article = Article::findOrFail($idArtikel);
+    $article->judulArtikel = $request->judulArtikel;
+    $article->isiArtikel = $request->isiArtikel;
+
+    if ($request->hasFile('fotoArtikel')) {
+        // Hapus foto lama jika ada
+        if ($article->fotoArtikel && file_exists(public_path('storage/fotos/' . $article->fotoArtikel))) {
+            unlink(public_path('storage/fotos/' . $article->fotoArtikel));
+        }
+
+        // Simpan foto baru dengan nama asli
+        $file = $request->file('fotoArtikel');
+        $fileName = $file->getClientOriginalName();
+        $file->move(public_path('storage/fotos'), $fileName);
+        $article->fotoArtikel = $fileName;
+    }
+
+    $article->save();
+
+    return redirect()->route('admin.kelolaartikel')->with('success', 'Artikel berhasil diperbarui.');
+    }
+
+    
 
     public function destroy($idArtikel)
     {

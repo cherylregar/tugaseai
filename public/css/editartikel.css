@@ -286,3 +286,52 @@ body {
 .btn i {
     margin-right: 5px;
 }
+
+
+
+.form-group {
+    margin-bottom: 20px;
+    color: #FFF;
+}
+
+.form-group label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #000;
+}
+
+.form-group img {
+    border-radius: 10px;
+}
+
+.btn-primary {
+    background-color: #F3CA4D;
+    color: #03669B;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #d4b145;
+}
