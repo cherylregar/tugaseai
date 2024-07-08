@@ -44,6 +44,13 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     Route::get('/pengajuan-setorsampah', [AdminAuthController::class, 'pengajuanSetorSampah'])->name('admin.pengajuansetorsampah');
     Route::get('/kelola-artikel', [AdminAuthController::class, 'kelolaartikel'])->name('admin.kelola-artikel');
 
+    Route::get('/admin/kelolaartikel', [ArticleController::class, 'showKelolaArtikel'])->name('admin.kelolaartikel');
+    Route::post('/admin/update/landingpage', [ArticleController::class, 'updateLandingPageArticles'])->name('admin.update.landingpage');
+    Route::get('/admin/edit/{idArtikel}', [ArticleController::class, 'edit'])->name('admin.edit');
+    Route::delete('/admin/delete/{idArtikel}', [ArticleController::class, 'destroy'])->name('admin.delete');
+
+
+
     // Route untuk form submission
     Route::post('/storeproduksampah', [SampahJualController::class, 'store'])->name('admin.storeproduksampah');
     Route::delete('/sampahjual/{idSampah}', [SampahJualController::class, 'destroy'])->name('sampahjual.destroy');

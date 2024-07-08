@@ -64,4 +64,45 @@
             </button>
         </form>
     </div>
+
+    <div class="tabelartikel">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID Artikel</th>
+                    <th>Judul Artikel</th>
+                    <th>Isi Artikel</th>
+                    <th>ID Admin</th>
+                    <th>Edit</th>
+                    <th>Hapus</th>
+                    <th>Foto Artikel</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($articles as $article)
+                    <tr>
+                        <td>{{ $article->idArtikel }}</td>
+                        <td>{{ $article->judulArtikel }}</td>
+                        <td>{{ \Illuminate\Support\Str::limit($article->isiArtikel, 50, '...') }}</td>
+                        <td>{{ $article->idAdmin }}</td>
+                        <td>
+                            <a href="{{ route('admin.edit', $article->idArtikel) }}" class="btn btn-primary">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <form action="{{ route('admin.delete', $article->idArtikel) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </form>
+                        </td>
+                        <td><img src="{{ asset('storage/fotos/' . $article->fotoArtikel) }}" alt="Foto Artikel" width="50"></td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 @endsection

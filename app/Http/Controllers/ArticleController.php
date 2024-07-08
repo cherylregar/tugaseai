@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Models\SelectedArticle;
 
 class ArticleController extends Controller
 {
+    public function showKelolaArtikel()
+    {
+        $articles = Article::all();
+        return view('admin.kelolaartikel', compact('articles'));
+    }
+
     public function updateLandingPageArticles(Request $request)
     {
         // Validasi request
@@ -37,4 +44,20 @@ class ArticleController extends Controller
         $article = Article::where('idArtikel', $idArtikel)->firstOrFail();
         return view('articlespages', compact('article'));
     }
+
+
+    public function edit($idArtikel)
+    {
+        $article = Article::findOrFail($idArtikel);
+        return view('editartikel', compact('article'));
+    }
+
+    public function destroy($idArtikel)
+    {
+        $article = Article::findOrFail($idArtikel);
+        $article->delete();
+        return redirect()->route('admin.kelolaartikel')->with('success', 'Artikel berhasil dihapus.');
+    }
+
+
 }
