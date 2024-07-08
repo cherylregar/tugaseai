@@ -15,6 +15,9 @@
         <li class="{{ request()->routeIs('admin.adminpage') ? 'active' : '' }}">
             <a href="{{ route('admin.adminpage') }}">Produk WasteMate</a>
         </li>
+        <li class="{{ request()->routeIs('admin.tambah-produk-sampah') ? 'active' : '' }}">
+            <a href="{{ route('admin.tambah-produk-sampah') }}">Tambah Produk WM</a>
+        </li>
         <li class="{{ request()->routeIs('admin.pesanan') ? 'active' : '' }}">
             <a href="{{ route('admin.pesanan') }}">Pesanan Berjalan</a>
         </li>
@@ -29,9 +32,6 @@
         </li>
         <li class="{{ request()->routeIs('admin.pengajuan-event') ? 'active' : '' }}">
             <a href="{{ route('admin.pengajuan-event') }}">Pengajuan Event</a>
-        </li>
-        <li class="{{ request()->routeIs('admin.tambah-produk-sampah') ? 'active' : '' }}">
-            <a href="{{ route('admin.tambah-produk-sampah') }}">Tambah Produk Sampah</a>
         </li>
         <li class="{{ request()->routeIs('admin.kelola-artikel') ? 'active' : '' }}">
             <a href="{{ route('admin.kelola-artikel') }}">Kelola Artikel</a>
