@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FAFAFA;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.judultambah {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formtambah {
+    margin-bottom: 20px;
+}
+
+.formtambah label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.formtambah input[type="text"],
+.formtambah textarea,
+.formtambah select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font to input elements */
+}
+
+.formtambah textarea {
+    resize: vertical;
+}
+
+.tombol-tambah {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.tombol-tambah:hover {
+    background-color: #0056b3;
+}
+
+.alert {
+    margin-top: 20px;
+}

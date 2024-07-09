@@ -21,7 +21,7 @@
 
 
         .bjcon1, .bjcon2 {
-            width: 85%;
+            width: 75%;
             height: fit-content; /* Sesuaikan lebar untuk layar yang lebih kecil */
             margin-right: 0;
             margin-bottom: 20px; /* Ruang antara bjcon1 dan bjcon2 di tampilan mobile */

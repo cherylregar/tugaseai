@@ -50,7 +50,9 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     Route::get('/admin/edit/{idArtikel}', [ArticleController::class, 'edit'])->name('admin.edit');
     Route::post('/admin/update/{idArtikel}', [ArticleController::class, 'update'])->name('admin.update');
     Route::put('/admin/articles/{idArtikel}', [ArticleController::class, 'update'])->name('admin.update');
-
+    Route::get('/admin/tambahartikel', [ArticleController::class, 'create'])->name('admin.tambahartikel');
+    Route::post('/admin/storeartikel', [ArticleController::class, 'store'])->name('admin.storeartikel');
+    
 
     Route::delete('/admin/delete/{idArtikel}', [ArticleController::class, 'destroy'])->name('admin.delete');
 
