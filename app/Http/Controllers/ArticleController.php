@@ -103,9 +103,11 @@ class ArticleController extends Controller
             $article->fotoArtikel = $fileName;
         }
 
-        $article->save();
-
-        return redirect()->route('admin.kelolaartikel')->with('success', 'Artikel berhasil ditambahkan.');
+        if ($article->save()) {
+            return redirect()->route('admin.kelolaartikel')->with('success', 'Artikel berhasil ditambahkan.');
+        } else {
+            return redirect()->route('admin.tambahartikel')->with('error', 'Simpan Data Gagal');
+        }
     }
 
     public function create()

@@ -17,9 +17,24 @@
         <form action="{{ route('admin.storeartikel') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
+            <!-- Ambil ID Artikel Terakhir -->
+            @php
+                $lastIdArtikel = \App\Models\Article::orderBy('idArtikel', 'desc')->first();
+                if ($lastIdArtikel) {
+                    // Ambil angka di belakang ARTIKEL
+                    $lastNumber = intval(substr($lastIdArtikel->idArtikel, 7));
+                    // Buat ID Artikel baru dengan nomor berikutnya
+                    $nextNumber = $lastNumber + 1;
+                    $nextIdArtikel = 'ARTIKEL00' . $nextNumber;
+                } else {
+                    // Jika belum ada artikel sama sekali
+                    $nextIdArtikel = 'ARTIKEL001';
+                }
+            @endphp
+
             <div class="formtambah">
                 <label for="idArtikel" class="body-text">ID Artikel</label>
-                <input type="text" id="idArtikel" name="idArtikel" placeholder="Input ID artikel Anda di sini">
+                <input type="text" id="idArtikel" name="idArtikel" value="{{ $nextIdArtikel }}" readonly>
             </div>
 
             <div class="formtambah">
