@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\SampahJual;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash; // Import Hash dari namespace Illuminate\Support\Facades
-use App\Models\Admin; // Pastikan model Admin diimpor jika belum diimpor
+use Illuminate\Support\Facades\Hash; 
+use App\Models\Admin; 
+use App\Models\Article;
+
 
 class AdminAuthController extends Controller
 {
@@ -68,6 +70,20 @@ class AdminAuthController extends Controller
         $lastSampah = SampahJual::latest('idSampah')->first();
         return view('admin.tambahproduksampah', compact('lastSampah'));
     }
+
+
+    public function tambahartikel()
+    {
+        $admins = Admin::all(); // Retrieve all admins
+        $lastArticle = Article::latest()->first();
+        $lastIdArtikel = $lastArticle ? $lastArticle->idArtikel : null;
+    
+        return view('admin.tambahartikel', [
+            'admins' => $admins,
+            'lastIdArtikel' => $lastIdArtikel
+        ]);
+    }
+    
 
     public function logout(Request $request)
     {

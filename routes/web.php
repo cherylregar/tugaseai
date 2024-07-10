@@ -43,6 +43,8 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     Route::get('/tambah-produk-sampah', [AdminAuthController::class, 'tambahProdukSampah'])->name('admin.tambah-produk-sampah');
     Route::get('/pengajuan-setorsampah', [AdminAuthController::class, 'pengajuanSetorSampah'])->name('admin.pengajuansetorsampah');
     Route::get('/kelola-artikel', [AdminAuthController::class, 'kelolaartikel'])->name('admin.kelola-artikel');
+    Route::get('/tambah-artikel', [AdminAuthController::class, 'tambahartikel'])->name('admin.tambah-artikel');
+
 
     Route::get('/admin/kelolaartikel', [ArticleController::class, 'showKelolaArtikel'])->name('admin.kelolaartikel');
     Route::post('/admin/update/landingpage', [ArticleController::class, 'updateLandingPageArticles'])->name('admin.update.landingpage');

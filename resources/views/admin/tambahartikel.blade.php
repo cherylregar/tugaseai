@@ -20,7 +20,6 @@
             <div class="formtambah">
                 <label for="idArtikel" class="body-text">ID Artikel</label>
                 <input type="text" id="idArtikel" name="idArtikel" placeholder="Input ID artikel Anda di sini">
-                <p class="body-text">ID Artikel yang terakhir adalah {{ $lastIdArtikel }}</p>
             </div>
 
             <div class="formtambah">
@@ -35,8 +34,11 @@
 
             <div class="formtambah">
                 <label for="idAdmin" class="body-text">ID Admin</label>
-                <input type="text" id="idAdmin" name="idAdmin" value="{{ session('idAdmin') }}" readonly>
-                <p class="body-text">ID Admin yang diambil adalah {{ session('idAdmin') }}</p>
+                <select id="idAdmin" name="idAdmin">
+                    @foreach ($admins as $admin)
+                        <option value="{{ $admin->idAdmin }}">{{ $admin->idAdmin }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="formtambah">
@@ -46,6 +48,8 @@
 
             <button type="submit" class="tombol-tambah">Tambahkan Artikel</button>
         </form>
+
+        
     </div>
 @endsection
 

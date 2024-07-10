@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\SelectedArticle;
 use App\Models\Admin;
-use Illuminate\Support\Facades\Auth; // Import Auth
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
@@ -18,7 +18,6 @@ class ArticleController extends Controller
 
     public function updateLandingPageArticles(Request $request)
     {
-        // Validasi request
         $request->validate([
             'main_article' => 'required|string',
             'article_1' => 'required|string',
@@ -26,7 +25,6 @@ class ArticleController extends Controller
             'article_3' => 'required|string',
         ]);
 
-        // Simpan data yang dipilih ke dalam database
         $selectedArticles = SelectedArticle::updateOrCreate(
             ['id' => 1], // Atau gunakan id yang sesuai jika ada
             [
@@ -37,7 +35,6 @@ class ArticleController extends Controller
             ]
         );
 
-        // Setelah berhasil menyimpan, alihkan ke halaman landing atau berikan respons yang sesuai
         return redirect()->route('landingpage')->with('success', 'Artikel untuk landing page berhasil diperbarui.');
     }
 
@@ -46,7 +43,6 @@ class ArticleController extends Controller
         $article = Article::where('idArtikel', $idArtikel)->firstOrFail();
         return view('articlespages', compact('article'));
     }
-
 
     public function edit($idArtikel)
     {
@@ -91,15 +87,14 @@ class ArticleController extends Controller
             'judulArtikel' => 'required|string|max:49',
             'isiArtikel' => 'required|string',
             'fotoArtikel' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'idAdmin' => 'required|string|exists:admins,idAdmin',
         ]);
-
-        $adminId = Auth::guard('admin')->user()->idAdmin; // Ambil idAdmin yang sedang login
 
         $article = new Article();
         $article->idArtikel = $request->idArtikel;
         $article->judulArtikel = $request->judulArtikel;
         $article->isiArtikel = $request->isiArtikel;
-        $article->idAdmin = $adminId; // Assign idAdmin yang sedang login
+        $article->idAdmin = $request->idAdmin; // Assign idAdmin from the request
 
         if ($request->hasFile('fotoArtikel')) {
             $file = $request->file('fotoArtikel');
@@ -113,32 +108,27 @@ class ArticleController extends Controller
         return redirect()->route('admin.kelolaartikel')->with('success', 'Artikel berhasil ditambahkan.');
     }
 
-
-
-
     public function create()
     {
-    // Cek apakah admin sudah diotentikasi
-    if (!Auth::guard('admin')->check()) {
-        // Jika admin tidak diotentikasi, redirect atau lakukan tindakan lain
-        return redirect()->route('loginadmin')->with('errorMsg', 'Silakan login terlebih dahulu.');
+        // Check if admin is authenticated
+        if (!Auth::guard('admin')->check()) {
+            // If admin is not authenticated, redirect or take other action
+            return redirect()->route('loginadmin')->with('errorMsg', 'Silakan login terlebih dahulu.');
+        }
+
+        // Fetch the last article
+        $lastArticle = Article::latest()->first();
+        $lastIdArtikel = $lastArticle ? $lastArticle->idArtikel : null;
+
+        // Fetch all admins
+        $admins = Admin::all();
+
+        // Send data to the view
+        return view('admin.tambahartikel', [
+            'lastIdArtikel' => $lastIdArtikel,
+            'admins' => $admins,
+        ]);
     }
-
-    // Admin sudah diotentikasi, lanjutkan untuk mendapatkan idAdmin
-    $adminId = Auth::guard('admin')->user()->idAdmin; // Ambil idAdmin dari admin yang sedang login
-
-    // Fetch data lain yang dibutuhkan, misalnya artikel terakhir
-    $lastArticle = Article::latest()->first();
-    $lastIdArtikel = $lastArticle ? $lastArticle->idArtikel : null;
-
-    // Kirim data ke view
-    return view('admin.tambahartikel', [
-        'idAdmin' => $adminId,
-        'lastIdArtikel' => $lastIdArtikel
-    ]);
-    }
-
-    
 
     public function destroy($idArtikel)
     {
@@ -146,6 +136,4 @@ class ArticleController extends Controller
         $article->delete();
         return redirect()->route('admin.kelolaartikel')->with('success', 'Artikel berhasil dihapus.');
     }
-
-
 }

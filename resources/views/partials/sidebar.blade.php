@@ -36,6 +36,10 @@
         <li class="{{ request()->routeIs('admin.kelola-artikel') ? 'active' : '' }}">
             <a href="{{ route('admin.kelola-artikel') }}">Kelola Artikel</a>
         </li>
+        <li class="{{ request()->routeIs('admin.tambah-artikel') ? 'active' : '' }}">
+            <a href="{{ route('admin.tambah-artikel') }}">Tambah Artikel</a>
+        </li>
+
     </ul>
     <form action="{{ route('admin.logout') }}" method="POST">
         @csrf

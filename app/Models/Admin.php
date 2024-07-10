@@ -10,6 +10,7 @@ class Admin extends Authenticatable
     use Notifiable;
 
     protected $fillable = [
+        'idAdmin',
         'nmAdmin',
         'emailAdmin',
         'passAdmin',
@@ -21,6 +22,7 @@ class Admin extends Authenticatable
 
     protected $table = 'admins';
     protected $primaryKey = 'idAdmin';
+    public $incrementing = false; // Set incrementing to false if the primary key is not auto-incrementing
 
     // Define the field name for the password
     public function getAuthPassword()

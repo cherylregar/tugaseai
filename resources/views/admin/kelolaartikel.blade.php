@@ -105,10 +105,5 @@
             </tbody>
         </table>
     </div>
-
-    <a href="{{ route('admin.tambahartikel') }}" class="tambah-artikel-button">
-        <button class="btn btn-primary">Tambah Artikel</button>
-    </a>
-
-
+    
 @endsection
