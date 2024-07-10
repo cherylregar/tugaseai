@@ -707,6 +707,7 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
     top: 70px;
 }
 
+
 .detailevent {
     display: flex;
     flex-direction: column;
@@ -715,11 +716,19 @@ a/* Styles for boxjualan, bjcon1, and bjcon2 */
 
 .fotoevent {
     width: 357px;
-    height: 225px;
+    height: auto;
     flex-shrink: 0;
     border-radius: 20px;
     background: #FFF;
 }
+
+.event-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional: to match the style of the site */
+    display: block;
+}
+
 
 .judulevent {
     color: #FFF;

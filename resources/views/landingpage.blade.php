@@ -179,18 +179,25 @@
             Daftarkan Event
         </div>
         <div class="tulisantersedia"> Tersedia untuk: </div>
+        
         <div class="jenisevent">
             <div class="detailevent">
-                <div class="fotoevent"></div>
+                <div class="fotoevent">
+                    <img src="{{ asset('images/eventcampus.jpeg') }}" alt="Event Campus" class="event-img">
+                </div>
                 <div class="judulevent">Event Kampus</div>
             </div>
             <div class="detailevent">
-                <div class="fotoevent"></div>
-                <div class="judulevent">Event Kampus</div>
+                <div class="fotoevent">
+                    <img src="{{ asset('images/concert.jpeg') }}" alt="Concert" class="event-img">
+                </div>
+                <div class="judulevent">Concert</div>
             </div>
             <div class="detailevent">
-                <div class="fotoevent"></div>
-                <div class="judulevent">Event Kampus</div>
+                <div class="fotoevent">
+                    <img src="{{ asset('images/others.jpeg') }}" alt="Others" class="event-img">
+                </div>
+                <div class="judulevent">Others</div>
             </div>
         </div>
     </div>
