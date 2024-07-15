@@ -70,13 +70,11 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     Route::post('/update-landing-page', [ArticleController::class, 'updateLandingPageArticles'])->name('admin.update.landingpage');
 });
 
-// Route for daftarevent page
-Route::get('/daftarevent', function () {
-    return view('daftarevent');
-})->name('daftarevent');
-
-// Route for storing event
-Route::post('/store-event', [EventController::class, 'store'])->name('store.event');
+// Route untuk event
+Route::get('/daftarevent', [EventController::class, 'create'])->name('daftarevent');
+Route::post('/daftarevent', [EventController::class, 'store'])->name('events.store');
+Route::put('/events/{id}', [EventController::class, 'update'])->name('events.update');
+Route::get('/suksesevent/{id}', [EventController::class, 'showSuccess'])->name('suksesevent');
 
 // Error login route
 Route::get('/kesalahanlogin', function () {
@@ -89,4 +87,3 @@ Route::get('/check-database', function () {
 })->name('checkdatabase');
 
 // Additional routes...
-
