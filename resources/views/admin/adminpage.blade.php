@@ -89,7 +89,7 @@
         </div>
 
         <!-- Table Display -->
-        <div class="bjcon1">
+        <div class="bjcon2">
             <div class="table-responsive">
                 <table class="table table-striped table-bordered">
                     <thead>
@@ -119,13 +119,18 @@
                             <td>{{ $sampah->created_at }}</td>
                             <td>{{ $sampah->updated_at }}</td>
                             <td>
-                                <form action="{{ route('sampahjual.destroy', $sampah->idSampah) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">
-                                        <i class="fas fa-trash-alt" style="color:white;"></i>
-                                    </button>
-                                </form>
+                                <div class="btn-group" role="group" aria-label="Actions">
+                                    <a href="{{ route('editsampahjual', $sampah->idSampah) }}" class="btn btn-primary">
+                                        <i class="fas fa-pencil-alt" style="color:white;"></i>
+                                    </a>
+                                    <form action="{{ route('sampahjual.destroy', $sampah->idSampah) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">
+                                            <i class="fas fa-trash-alt" style="color:white;"></i>
+                                        </button>
+                                    </form>
+                                </div>
                             </td>
                         </tr>
                         @endforeach
