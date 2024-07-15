@@ -176,7 +176,7 @@
             Kami dapat mengelola sampah di Event Anda, daftarkan event Anda sekarang juga!
         </div>
         <div class="buttondaftarevent">
-            Daftarkan Event
+            <a href="{{ route('daftarevent') }}" class="daftarkan-event">Daftarkan Event</a>
         </div>
         <div class="tulisantersedia"> Tersedia untuk: </div>
         

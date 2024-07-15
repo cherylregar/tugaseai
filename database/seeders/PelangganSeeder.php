@@ -10,32 +10,14 @@ class PelangganSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('pelanggan')->updateOrInsert(
-            ['idPelanggan' => 'PLG001'],
-            [
-                'idKampus' => 'KMP001',
-                'nmPelanggan' => 'Irfan Ariq',
-                'jenisKel' => 'Laki-laki',
-                'NIM_NIP' => '6701213001',
-                'fakultas' => 'Fakultas Rekayasa Industri',
-                'emailPel' => 'irfanariq@wastepals.com',
-                'passPel' => Hash::make('password123'),
-            ]
-        );
-
-        DB::table('pelanggan')->updateOrInsert(
-            ['idPelanggan' => 'PLG002'],
-            [
-                'idKampus' => 'KMP001',
-                'nmPelanggan' => 'Siti Nurbayani',
-                'jenisKel' => 'Perempuan',
-                'NIM_NIP' => '6701213111',
-                'fakultas' => 'Fakultas Ilmu Terapan',
-                'emailPel' => 'sitinurbayani@wastepals.com',
-                'passPel' => Hash::make('password456'),
-            ]
-        );
-
-        // Tambahkan data lain jika diperlukan
+        DB::table('pelanggan')->insert([
+            'idPelanggan' => 'PLG2024001',
+            'username' => 'cherrgr',
+            'emailPel' => 'cherylregar@gmail.com',
+            'passPel' => Hash::make('cherylregar!'),
+            'NIM' => '6701213004',
+            'idKampus' => 'KAM001',
+            'idFakultas' => 'FKT00101'
+        ]);
     }
 }

@@ -17,6 +17,12 @@ return [
             'driver' => 'session',
             'provider' => 'admins',
         ],
+
+        'pelanggan' => [ // New guard for pelanggan
+            'driver' => 'session',
+            'provider' => 'pelanggans',
+        ],
+
     ],
 
     'providers' => [
@@ -29,6 +35,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
         ],
+
+        'pelanggans' => [ // New provider for pelanggans
+            'driver' => 'eloquent',
+            'model' => App\Models\Pelanggan::class,
+        ],
     ],
 
     'passwords' => [
@@ -38,6 +49,12 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+    'pelanggans' => [ // Password reset for pelanggans
+            'provider' => 'pelanggans',
+            'table' => 'password_resets_pelanggans', // Adjust table name if needed
+            'expire' => 60,
+            'throttle' => 60,
+        ],    
     ],
 
     'password_timeout' => 10800,

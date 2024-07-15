@@ -5,11 +5,12 @@ use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\SampahJualController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\EventController;
 
 // Landing page route
 Route::get('/', [LandingPageController::class, 'index'])->name('landingpage');
 Route::get('/articlespages/{idArtikel}', [ArticleController::class, 'show'])->name('articlespages.show');
-
 
 // About page route
 Route::get('/about', function () {
@@ -21,9 +22,15 @@ Route::get('/logincust', function () {
     return view('logincust');
 })->name('logincust');
 
+// Authentication routes
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
 // Admin login routes
 Route::get('/loginadmin', [AdminAuthController::class, 'showLoginForm'])->name('loginadmin');
 Route::post('/loginadmin', [AdminAuthController::class, 'login'])->name('admin.login.submit');
+Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 
 // Routes that require admin authentication
 Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
@@ -45,20 +52,15 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     Route::get('/kelola-artikel', [AdminAuthController::class, 'kelolaartikel'])->name('admin.kelola-artikel');
     Route::get('/tambah-artikel', [AdminAuthController::class, 'tambahartikel'])->name('admin.tambah-artikel');
 
-
-    Route::get('/admin/kelolaartikel', [ArticleController::class, 'showKelolaArtikel'])->name('admin.kelolaartikel');
-    Route::post('/admin/update/landingpage', [ArticleController::class, 'updateLandingPageArticles'])->name('admin.update.landingpage');
+    Route::get('/kelolaartikel', [ArticleController::class, 'showKelolaArtikel'])->name('admin.kelolaartikel');
+    Route::post('/update/landingpage', [ArticleController::class, 'updateLandingPageArticles'])->name('admin.update.landingpage');
     
-    Route::get('/admin/edit/{idArtikel}', [ArticleController::class, 'edit'])->name('admin.edit');
-    Route::post('/admin/update/{idArtikel}', [ArticleController::class, 'update'])->name('admin.update');
-    Route::put('/admin/articles/{idArtikel}', [ArticleController::class, 'update'])->name('admin.update');
-    Route::get('/admin/tambahartikel', [ArticleController::class, 'create'])->name('admin.tambahartikel');
-    Route::post('/admin/storeartikel', [ArticleController::class, 'store'])->name('admin.storeartikel');
-    
-
-    Route::delete('/admin/delete/{idArtikel}', [ArticleController::class, 'destroy'])->name('admin.delete');
-
-
+    Route::get('/edit/{idArtikel}', [ArticleController::class, 'edit'])->name('admin.edit');
+    Route::post('/update/{idArtikel}', [ArticleController::class, 'update'])->name('admin.update');
+    Route::put('/articles/{idArtikel}', [ArticleController::class, 'update'])->name('admin.update');
+    Route::get('/tambahartikel', [ArticleController::class, 'create'])->name('admin.tambahartikel');
+    Route::post('/storeartikel', [ArticleController::class, 'store'])->name('admin.storeartikel');
+    Route::delete('/delete/{idArtikel}', [ArticleController::class, 'destroy'])->name('admin.delete');
 
     // Route untuk form submission
     Route::post('/storeproduksampah', [SampahJualController::class, 'store'])->name('admin.storeproduksampah');
@@ -66,13 +68,15 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
 
     // Update landing page articles route
     Route::post('/update-landing-page', [ArticleController::class, 'updateLandingPageArticles'])->name('admin.update.landingpage');
-
-    // Admin logout route
-    Route::post('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
 });
 
-// Logout route
-Route::post('/admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
+// Route for daftarevent page
+Route::get('/daftarevent', function () {
+    return view('daftarevent');
+})->name('daftarevent');
+
+// Route for storing event
+Route::post('/store-event', [EventController::class, 'store'])->name('store.event');
 
 // Error login route
 Route::get('/kesalahanlogin', function () {
@@ -85,3 +89,4 @@ Route::get('/check-database', function () {
 })->name('checkdatabase');
 
 // Additional routes...
+

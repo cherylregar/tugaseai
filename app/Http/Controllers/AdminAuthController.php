@@ -44,6 +44,7 @@ class AdminAuthController extends Controller
         return view('admin.adminpage', compact('sampahKertas', 'sampahKardus', 'sampahPlastik', 'sampahItems'));
     }
 
+
     public function update(Request $request, $idSampah)
     {
         // Validasi input jika diperlukan
