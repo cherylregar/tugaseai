@@ -32,22 +32,18 @@ class SampahJualController extends Controller
         $sampah->nmSampah = $request->nmSampah;
         $sampah->poinjual = $request->poinjual;
 
+        // Handle file upload
         if ($request->hasFile('foto')) {
-            // Delete the old photo if it exists
-            if ($sampah->foto) {
-                Storage::delete('public/fotos/' . $sampah->foto);
-            }
+            // Get filename with the extension
+            $filename = $request->file('foto')->getClientOriginalName();
 
-            // Get the uploaded file
-            $file = $request->file('foto');
-            // Get the file's original name
-            $filename = $file->getClientOriginalName();
-            // Store the file in the public/fotos directory
-            $file->storeAs('public/fotos', $filename);
-            // Update the database with the new file name
-            $sampah->foto = $filename;
+            // Move the file to the directory
+            $directory = public_path('storage/fotos');
+            $request->file('foto')->move($directory, $filename);
+        } else {
+            $filename = null;
         }
-
+        $sampah->foto = $filename;
         $sampah->save();
 
         return redirect()->route('admin.adminpage')->with('success', 'Sampah updated successfully.');
@@ -66,8 +62,10 @@ class SampahJualController extends Controller
         if ($request->hasFile('foto')) {
             // Get filename with the extension
             $filename = $request->file('foto')->getClientOriginalName();
-            // Store the file in the directory
-            $request->file('foto')->storeAs('public/fotos', $filename);
+
+            // Move the file to the directory
+            $directory = public_path('storage/fotos');
+            $request->file('foto')->move($directory, $filename);
         } else {
             $filename = null;
         }
