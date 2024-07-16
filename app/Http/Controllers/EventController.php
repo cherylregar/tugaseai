@@ -31,9 +31,14 @@ class EventController extends Controller
             'JamBerakhir' => 'required',
         ]);
 
+        // Debugging
+        \Log::info('ID Pelanggan dari form: ' . $request->idPelanggan);
+
         // Periksa apakah ID Pelanggan ada dalam database
         $pelanggan = Pelanggan::where('idPelanggan', $request->idPelanggan)->first();
+
         if (!$pelanggan) {
+            \Log::error('ID Pelanggan tidak ditemukan di database: ' . $request->idPelanggan);
             return redirect()->back()->withInput()->with('error', 'ID Pelanggan tidak ditemukan.');
         }
 
@@ -41,5 +46,13 @@ class EventController extends Controller
         Event::create($request->all());
 
         return redirect()->route('daftarevent')->with('success', 'Event berhasil didaftarkan.');
+    }
+
+    public function validatePelanggan(Request $request)
+    {
+        $idPelanggan = $request->idPelanggan;
+        $exists = Pelanggan::where('idPelanggan', $idPelanggan)->exists();
+
+        return response()->json(['exists' => $exists]);
     }
 }

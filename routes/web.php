@@ -75,6 +75,8 @@ Route::get('/daftarevent', [EventController::class, 'create'])->name('daftareven
 Route::post('/daftarevent', [EventController::class, 'store'])->name('events.store');
 Route::put('/events/{id}', [EventController::class, 'update'])->name('events.update');
 Route::get('/suksesevent/{id}', [EventController::class, 'showSuccess'])->name('suksesevent');
+Route::post('/validate-pelanggan', [EventController::class, 'validatePelanggan'])->name('validate.pelanggan');
+
 
 // Error login route
 Route::get('/kesalahanlogin', function () {

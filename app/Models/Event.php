@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
+    use HasFactory;
+
     protected $table = 'event'; // Specify the table name if different from the model name
     public $timestamps = false; // Disable automatic management of created_at and updated_at
 

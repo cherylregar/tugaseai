@@ -8,7 +8,11 @@
 </head>
 <body>
     <div class="logodanajakan">
-        <div class="logowmevent"><img src="{{ asset('images/WM LOGO WHITE.png') }}" alt="Logo"></div>
+        <a href="{{ route('landingpage') }}">
+            <div class="logowmevent">
+                <img src="{{ asset('images/WM LOGO WHITE.png') }}" alt="Logo">
+            </div>
+        </a>
         <div class="tulisaneventajak">Ayo Daftarkan Event Kamu di Waste Management Event</div>
     </div>
     <div class="conformevent">
@@ -74,19 +78,35 @@
         </div>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         function validatePelanggan() {
             var idPelanggan = document.getElementById('idPelanggan').value;
-            
-            // Lakukan validasi atau periksa apakah idPelanggan ada di database Pelanggan
-            // Di sini bisa menggunakan AJAX untuk melakukan pengecekan asinkron
-            
-            // Contoh sederhana dengan kondisi statis, bisa disesuaikan dengan implementasi sesungguhnya
-            if (idPelanggan !== 'pelanggan_001') { // Ganti dengan kondisi yang sesuai dengan implementasi Anda
-                alert('ID Pelanggan tidak ditemukan.');
-                return false; // Batalkan submit form
-            }
-            return true; // Lanjutkan submit form
+            var isValid = false;
+
+            $.ajax({
+                url: "{{ route('validate.pelanggan') }}", // Route for validating pelanggan
+                type: "POST",
+                data: {
+                    _token: "{{ csrf_token() }}",
+                    idPelanggan: idPelanggan
+                },
+                async: false,
+                success: function(response) {
+                    if (response.exists) {
+                        isValid = true;
+                    } else {
+                        alert('ID Pelanggan tidak ditemukan.');
+                        isValid = false;
+                    }
+                },
+                error: function() {
+                    alert('Terjadi kesalahan saat memeriksa ID Pelanggan.');
+                    isValid = false;
+                }
+            });
+
+            return isValid;
         }
     </script>
 </body>

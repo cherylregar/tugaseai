@@ -1,32 +1,29 @@
 <?php
 
-// app/Http/Controllers/EventController.php
+namespace App\Models;
 
-namespace App\Http\Controllers;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-use Illuminate\Http\Request;
-use App\Models\Event;
-
-class EventController extends Controller
+class Pelanggan extends Model
 {
-    public function store(Request $request)
-    {
-        // Validasi request
-        $request->validate([
-            'username' => 'required',
-            'idEvent' => 'required',
-            'nmEvent' => 'required',
-            'tglEvent' => 'required|date',
-            'TempatEvent' => 'required',
-            'JumlahPeserta' => 'required|integer',
-            'JamMulai' => 'required',
-            'JamBerakhir' => 'required',
-        ]);
+    use HasFactory;
 
-        // Simpan data ke database
-        Event::create($request->all());
+    protected $table = 'pelanggan';
 
-        // Redirect ke halaman daftarevent.blade.php dengan pesan sukses
-        return redirect()->route('daftarevent')->with('success', 'Data event anda sudah terkirim.');
-    }
+    protected $primaryKey = 'idPelanggan';
+
+    public $incrementing = false;
+
+    protected $keyType = 'string';
+
+    protected $fillable = [
+        'idPelanggan', 
+        'username', 
+        'emailPel', 
+        'passPel', 
+        'NIM', 
+        'idKampus', 
+        'idFakultas'
+    ];
 }
