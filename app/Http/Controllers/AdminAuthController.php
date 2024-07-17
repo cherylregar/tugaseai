@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash; 
 use App\Models\Admin; 
 use App\Models\Article;
+use App\Models\Kampus;
+use App\Models\Fakultas;
+use App\Models\Pelanggan;
+
 
 
 class AdminAuthController extends Controller
@@ -85,6 +89,16 @@ class AdminAuthController extends Controller
         ]);
     }
     
+
+    public function dashboard()
+    {
+        $jumlahKampus = Kampus::count(); 
+        $jumlahFakultas = Fakultas::count();
+        $jumlahPelanggan = Pelanggan::count();
+
+        return view('admin.dashboardadmin', compact('jumlahKampus','jumlahFakultas','jumlahPelanggan'));
+    }
+
 
     public function logout(Request $request)
     {

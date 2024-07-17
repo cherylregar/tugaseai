@@ -1,0 +1,210 @@
+/* admin.css */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FAFAFA;
+    margin: 0;
+}
+
+.main-content {
+    margin-left: 300px; /* Adjust to match sidebar width */
+    padding: 20px;
+    margin-top: 60px; /* Add margin to avoid overlap with navbar */
+}
+
+.container p {
+    color: #03669B;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 20px;
+    line-height: 1.2; /* Sesuaikan spasi antar baris */
+}
+
+
+.contdash1 {
+    width: 1016px;
+    height: 280px;
+    flex-shrink: 0;
+    border-radius: 37px;
+    background: #F3CA4D;
+    margin: 10px auto;
+    padding: 20px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.contkampusfaku {
+    width: 296px;
+    height: 270px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.contkampus {
+    width: 294px;
+    height: 130px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #0077B6;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.contfaku {
+    width: 294px;
+    height: 130px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #0077B6;
+    display: flex;
+    align-items: center;
+    }    
+
+.tulisandash {
+    width: 141.749px;
+    height: 90.466px;
+    flex-shrink: 0;
+    margin-left: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.jumlahkampus {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.namakampus {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 0.1;
+    }
+
+
+.jumlahfakultas {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.namafakultas {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 0.1;
+    }
+
+.contuser {
+    width: 500px;
+    height: 270px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #0077B6;
+    padding-left: 10px;
+    padding-right: 10px;
+
+
+}
+
+.userpertama {
+    width: 100px;
+    display: flex; /* Menggunakan flexbox */
+    align-items: center; /* Menyelaraskan konten secara vertikal di tengah */
+    justify-content: space-between; /* Membuat konten rata secara horizontal */
+    margin-top: 20px;
+}
+
+
+
+.tulisandash2 {
+    width: 141.749px;
+    height: 90.466px;
+    flex-shrink: 0;
+    margin-left: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.jumlahpengguna {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-align: center;
+}
+
+.namapengguna {
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 0.1;
+    text-align: center;
+
+}
+
+
+
+.contwp {
+    width: 150px;
+    height: 270px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #0077B6;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+}
+
+.kampusicon {
+    width: 82.644px;
+    height: 82.644px;
+    flex-shrink: 0;
+    padding-left: 20px;
+}
+
+.kampusicon {
+    width: 82.644px;
+    height: 82.644px;
+    flex-shrink: 0;
+    padding-left: 20px;
+}
+
+
+.contdash2 {
+    width: 1016px;
+    height: 280px;
+    flex-shrink: 0;
+    border-radius: 37px;
+    background: #F3CA4D;
+    margin: 10px auto;
+    padding: 20px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+

@@ -12,6 +12,9 @@
         <p class="admin-text">Admin {{ $firstWord }}</p>
     </div>
     <ul>
+        <li class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+            <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+        </li>
         <li class="{{ request()->routeIs('admin.adminpage') ? 'active' : '' }}">
             <a href="{{ route('admin.adminpage') }}">Produk WasteMate</a>
         </li>
@@ -20,9 +23,6 @@
         </li>
         <li class="{{ request()->routeIs('admin.pesanan') ? 'active' : '' }}">
             <a href="{{ route('admin.pesanan') }}">Pesanan Berjalan</a>
-        </li>
-        <li class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
-            <a href="{{ route('admin.dashboard') }}">Dashboard</a>
         </li>
         <li class="{{ request()->routeIs('admin.leaderboard') ? 'active' : '' }}">
             <a href="{{ route('admin.leaderboard') }}">Leaderboard</a>
@@ -39,7 +39,6 @@
         <li class="{{ request()->routeIs('admin.tambah-artikel') ? 'active' : '' }}">
             <a href="{{ route('admin.tambah-artikel') }}">Tambah Artikel</a>
         </li>
-
     </ul>
     <form action="{{ route('admin.logout') }}" method="POST">
         @csrf

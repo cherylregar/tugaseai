@@ -24,6 +24,7 @@ class Pelanggan extends Model
         'passPel', 
         'NIM', 
         'idKampus', 
-        'idFakultas'
+        'idFakultas',
+        'jenisKel'
     ];
 }

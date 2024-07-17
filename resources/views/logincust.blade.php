@@ -1,3 +1,5 @@
+<!-- File: resources/views/logincust.blade.php -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
