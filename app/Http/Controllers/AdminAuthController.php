@@ -6,11 +6,13 @@ use App\Models\SampahJual;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash; 
+use Illuminate\Support\Facades\DB;
 use App\Models\Admin; 
 use App\Models\Article;
 use App\Models\Kampus;
 use App\Models\Fakultas;
 use App\Models\Pelanggan;
+use App\Models\Wastepals;
 
 
 
@@ -32,7 +34,7 @@ class AdminAuthController extends Controller
 
             Auth::guard('admin')->login($admin);
 
-            return redirect()->route('admin.adminpage');
+            return redirect()->route('admin.dashboard');
         }
 
         return redirect()->route('loginadmin')->with('errorMsg', 'Email atau sandi tidak valid.');
@@ -95,8 +97,15 @@ class AdminAuthController extends Controller
         $jumlahKampus = Kampus::count(); 
         $jumlahFakultas = Fakultas::count();
         $jumlahPelanggan = Pelanggan::count();
+        $jumlahLaki = DB::table('pelanggan')
+        ->where('jenisKel', 'Laki-laki')
+        ->count();
+        $jumlahPerempuan = DB::table('pelanggan')
+        ->where('jenisKel', 'Perempuan')
+        ->count();
+        $jumlahWastepals = Wastepals::count();
 
-        return view('admin.dashboardadmin', compact('jumlahKampus','jumlahFakultas','jumlahPelanggan'));
+        return view('admin.dashboardadmin', compact('jumlahKampus','jumlahFakultas','jumlahPelanggan','jumlahLaki','jumlahPerempuan','jumlahWastepals'));
     }
 
 

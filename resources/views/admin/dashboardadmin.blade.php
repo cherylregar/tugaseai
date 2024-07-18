@@ -42,17 +42,34 @@
 
             <div class="contuser">
                     <div class="userpertama">
-                        <img src="{{ asset('images/fakultas.png') }}" alt="Foto Ewaste" class="kampusicon">
+                        <img src="{{ asset('images/group.png') }}" alt="Foto Ewaste" class="kampusicon2">
                         <div class="tulisandash2">
                             <div class="jumlahpengguna">{{ $jumlahPelanggan }}</div>
                             <div class="namapengguna">Pelanggan</div>
                         </div>  
                     </div>    
+
+                    <div class="boxgender">
+                        <div class="lakilaki">
+                            <div class="jumlahlaki">{{ $jumlahLaki }}</div>
+                            <div class="tulisanlaki">Laki-laki</div>
+                        </div>
+
+                        <div class="perempuan">
+                            <div class="jumlahlaki">{{ $jumlahPerempuan }}</div>
+                            <div class="tulisanlaki">Perempuan</div>
+                        </div>
+                    </div>
+
+                    
             </div>    
 
 
             <div class="contwp">
- 
+                <img src="{{ asset('images/volunteer.png') }}" alt="Foto Ewaste" class="wpicon">
+                <div class="jumlahlaki"> {{ $jumlahWastepals }} </div>
+                <div class="tulisanlaki"> Wastepals</div>
+                <div class="tulisanlaki"> /Volunteer</div>
             </div> 
 
         </div>

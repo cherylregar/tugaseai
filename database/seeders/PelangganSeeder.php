@@ -11,13 +11,14 @@ class PelangganSeeder extends Seeder
     public function run()
     {
         DB::table('pelanggan')->insert([
-            'idPelanggan' => 'PLG2024001',
-            'username' => 'cherrgr',
-            'emailPel' => 'cherylregar@gmail.com',
-            'passPel' => Hash::make('cherylregar!'),
-            'NIM' => '6701213004',
+            'idPelanggan' => 'PLG2024003',
+            'username' => 'sitinur',
+            'emailPel' => 'sitinurbayani@gmail.com',
+            'passPel' => Hash::make('12345!'),
+            'NIM' => '6701213015',
             'idKampus' => 'KAM001',
-            'idFakultas' => 'FKT00101'
+            'idFakultas' => 'FKT00101',
+            'jenisKel' => 'Perempuan'
         ]);
     }
 }
