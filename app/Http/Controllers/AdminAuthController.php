@@ -13,6 +13,8 @@ use App\Models\Kampus;
 use App\Models\Fakultas;
 use App\Models\Pelanggan;
 use App\Models\Wastepals;
+use App\Models\Event;
+
 
 
 
@@ -104,8 +106,10 @@ class AdminAuthController extends Controller
         ->where('jenisKel', 'Perempuan')
         ->count();
         $jumlahWastepals = Wastepals::count();
+        $jumlahEvent = Event::count();
+        $jumlahJenisSampah = SampahJual::count();
 
-        return view('admin.dashboardadmin', compact('jumlahKampus','jumlahFakultas','jumlahPelanggan','jumlahLaki','jumlahPerempuan','jumlahWastepals'));
+        return view('admin.dashboardadmin', compact('jumlahKampus','jumlahFakultas','jumlahPelanggan','jumlahLaki','jumlahPerempuan','jumlahWastepals','jumlahEvent','jumlahJenisSampah'));
     }
 
 

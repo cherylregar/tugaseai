@@ -69,12 +69,84 @@
                 <img src="{{ asset('images/volunteer.png') }}" alt="Foto Ewaste" class="wpicon">
                 <div class="jumlahlaki"> {{ $jumlahWastepals }} </div>
                 <div class="tulisanlaki"> Wastepals</div>
-                <div class="tulisanlaki"> /Volunteer</div>
+                <div class="tulisanlaki"> /Relawan</div>
             </div> 
 
         </div>
 
         <div class="contdash2">
+
+            <div class="contevent">
+                <img src="{{ asset('images/event.png') }}" alt="Foto Ewaste" class="wpicon">
+                <div class="jumlahlaki"> {{ $jumlahEvent }} </div>
+                <div class="tulisanlaki"> Event</div>
+                <div class="tulisanlaki"> dikelola</div>
+            </div>
+
+            <div class="contjenis">
+                <div class="jenisjenis">
+                    <div class="tulsamp">
+                        <div class="jumlahsampah"> {{ $jumlahJenisSampah }} </div>
+                        <div class="tulisansampah"> Jenis <br> Sampah</div>
+                    </div>
+
+                    <div class="jeniskecil"> 
+                        <div class="namasampah"> Kertas </div>
+                        <div class="kilosampah"> 20kg </div>
+                    </div>
+                    <div class="jeniskecilkar"> 
+                        <div class="namasampah"> Kardus </div>
+                        <div class="kilosampah"> 20kg </div>
+                    </div>
+
+                    <div class="jeniskecilplas"> 
+                        <div class="namasampah"> Plastik </div>
+                        <div class="kilosampah"> 20kg </div>
+                    </div>
+
+                    <div class="jeniskecilsisma"> 
+                        <div class="namasampah"> Sisa Makanan </div>
+                        <div class="kilosampah"> 20kg </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="contkilo">
+                <div class="dikumpulkan">
+                            
+                    <div class="timbulansampah">
+                        <div class="foto1">
+                            <img src="{{ asset('images/timbulan.png') }}" alt="Foto Ewaste" class="foto1">
+                        </div>
+                        <div class="tulisanatasbawah">
+                            <div class="tulisankilotim">
+                                <span class="angka">122</span>
+                                <span class="kg">kg</span>
+                            </div>
+                            <div class="tulisansampahdik">Sampah Dikumpulkan</div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="dikumpulkan">
+                <div class="timbulansampah">
+                    <div class="foto1">
+                        <img src="{{ asset('images/recycle.png') }}" alt="Foto Ewaste" class="foto1">
+                    </div>
+                    <div class="tulisanatasbawah">
+                        <div class="tulisankilotim">
+                            <span class="angka">20</span>
+                            <span class="kg">kg</span>
+                        </div>
+                        <div class="tulisansampahdik">Sampah Dimanfaatkan</div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
             
         </div>
     </div>
