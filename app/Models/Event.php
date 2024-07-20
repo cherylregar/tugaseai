@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,8 +8,11 @@ class Event extends Model
 {
     use HasFactory;
 
-    protected $table = 'event'; // Specify the table name if different from the model name
-    public $timestamps = false; // Disable automatic management of created_at and updated_at
+    protected $table = 'event'; 
+    protected $primaryKey = 'idEvent'; 
+    public $timestamps = false; 
+    public $incrementing = false; 
+    protected $keyType = 'string';
 
     protected $fillable = [
         'idEvent', 
@@ -21,6 +23,7 @@ class Event extends Model
         'JamMulai', 
         'JamBerakhir', 
         'idPelanggan',
+        'status', 
     ];
 
     // Additional model logic, relationships, or methods can be added here

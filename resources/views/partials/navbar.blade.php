@@ -16,10 +16,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('landingpage') ? 'active' : '' }}" href="{{ route('landingpage') }}">Home</a>
+                    <a class="nav-link {{ request()->routeIs('landingpage') ? 'active' : '' }}" href="{{ route('landingpage') }}">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a>
+                    <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">Tentang Kami</a>
                 </li>
             </ul>
             <div class="search-container search-container-desktop">
@@ -28,10 +28,10 @@
             </div>
             <ul class="navbar-nav ml-auto align-items-center"> <!-- Add align-items-center class -->
                 <li class="nav-item">
-                    <a href="{{ route('logincust') }}" class="nav-link">Login</a>
+                    <a href="{{ route('logincust') }}" class="nav-link">Masuk</a>
                 </li>
                 <li class="nav-item">
-                    <button class="signup-button">Sign Up</button>
+                    <button class="signup-button">Registrasi</button>
                 </li>
             </ul>
         </div>

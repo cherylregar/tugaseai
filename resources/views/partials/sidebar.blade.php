@@ -27,9 +27,10 @@
         <li class="{{ request()->routeIs('admin.leaderboard') ? 'active' : '' }}">
             <a href="{{ route('admin.leaderboard') }}">Leaderboard</a>
         </li>
-        <li class="{{ request()->routeIs('admin.pengajuan-setor') ? 'active' : '' }}">
-            <a href="{{ route('admin.pengajuan-setor') }}">Pengajuan Setor Sampah</a>
+        <li class="{{ request()->routeIs('admin.pengajuan-setorsampah') ? 'active' : '' }}">
+            <a href="{{ route('admin.pengajuan-setorsampah') }}">Pengajuan Setor Sampah</a>
         </li>
+
         <li class="{{ request()->routeIs('admin.pengajuan-event') ? 'active' : '' }}">
             <a href="{{ route('admin.pengajuan-event') }}">Pengajuan Event</a>
         </li>
@@ -38,6 +39,9 @@
         </li>
         <li class="{{ request()->routeIs('admin.tambah-artikel') ? 'active' : '' }}">
             <a href="{{ route('admin.tambah-artikel') }}">Tambah Artikel</a>
+        </li>
+        <li class="{{ request()->routeIs('admin.tambah-artikel') ? 'active' : '' }}">
+            <a href="{{ route('admin.tambah-artikel') }}">Kelola Data Sampah</a>
         </li>
     </ul>
     <form action="{{ route('admin.logout') }}" method="POST">

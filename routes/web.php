@@ -21,7 +21,6 @@ Route::get('/about', function () {
 Route::get('/logincust', [LoginPelangganController::class, 'showLoginForm'])->name('logincust');
 Route::post('/logincust', [LoginPelangganController::class, 'login'])->name('logincust.submit');
 Route::post('/logout', [LoginPelangganController::class, 'logout'])->name('logout');
-Route::post('/login', [LoginPelangganController::class, 'login'])->name('login');
 
 // Admin login routes
 Route::get('/loginadmin', [AdminAuthController::class, 'showLoginForm'])->name('loginadmin');
@@ -37,13 +36,17 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard', [AdminAuthController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/leaderboard', [AdminAuthController::class, 'leaderboard'])->name('admin.leaderboard');
     Route::get('/pengajuan-setor', [AdminAuthController::class, 'pengajuanSetor'])->name('admin.pengajuan-setor');
-    Route::get('/pengajuan-event', [AdminAuthController::class, 'pengajuanEvent'])->name('admin.pengajuan-event');
+    Route::get('/pengajuanevent', [AdminAuthController::class, 'pengajuanEvent'])->name('admin.pengajuan-event');
     Route::get('/tambah-produk-sampah', [AdminAuthController::class, 'tambahProdukSampah'])->name('admin.tambah-produk-sampah');
-    Route::get('/pengajuan-setorsampah', [AdminAuthController::class, 'pengajuanSetorSampah'])->name('admin.pengajuansetorsampah');
+    Route::get('/pengajuan-setor-sampah', [AdminAuthController::class, 'pengajuanSetorSampah'])->name('admin.pengajuan-setorsampah');
+    Route::get('/admin/setor-sampah/edit/{id}', [AdminAuthController::class, 'editSetorSampah'])->name('setorsampah.edit');
+    Route::delete('/setor-sampah/delete/{id}', [AdminAuthController::class, 'deleteSetorSampah'])->name('setorsampah.delete');
+
+    
     Route::get('/kelola-artikel', [AdminAuthController::class, 'kelolaartikel'])->name('admin.kelola-artikel');
     Route::get('/tambah-artikel', [AdminAuthController::class, 'tambahartikel'])->name('admin.tambah-artikel');
     Route::get('/kelolaartikel', [ArticleController::class, 'showKelolaArtikel'])->name('admin.kelolaartikel');
-    Route::post('/update/landingpage', [ArticleController::class, 'updateLandingPageArticles'])->name('admin.update.landingpage');
+    Route::post('/update-landing-page', [ArticleController::class, 'updateLandingPageArticles'])->name('admin.update.landingpage');
     Route::get('/edit/{idArtikel}', [ArticleController::class, 'edit'])->name('admin.edit');
     Route::post('/update/{idArtikel}', [ArticleController::class, 'update'])->name('admin.update');
     Route::put('/articles/{idArtikel}', [ArticleController::class, 'update'])->name('admin.update');
@@ -52,7 +55,6 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     Route::delete('/delete/{idArtikel}', [ArticleController::class, 'destroy'])->name('admin.delete');
     Route::post('/storeproduksampah', [SampahJualController::class, 'store'])->name('admin.storeproduksampah');
     Route::delete('/sampahjual/{idSampah}', [SampahJualController::class, 'destroy'])->name('sampahjual.destroy');
-    Route::post('/update-landing-page', [ArticleController::class, 'updateLandingPageArticles'])->name('admin.update.landingpage');
 });
 
 // Route for event
@@ -60,6 +62,9 @@ Route::get('/daftarevent', [EventController::class, 'create'])->name('daftareven
 Route::post('/daftarevent', [EventController::class, 'store'])->name('events.store');
 Route::put('/events/{id}', [EventController::class, 'update'])->name('events.update');
 Route::get('/suksesevent/{id}', [EventController::class, 'showSuccess'])->name('suksesevent');
+Route::get('/editevent/{idEvent}', [EventController::class, 'edit'])->name('event.edit');
+Route::put('/updateevent/{idEvent}', [EventController::class, 'update'])->name('event.update');
+Route::delete('/deleteevent/{idEvent}', [EventController::class, 'destroy'])->name('event.delete');
 Route::post('/validate-pelanggan', [EventController::class, 'validatePelanggan'])->name('validate.pelanggan');
 
 // Error login route
@@ -71,3 +76,5 @@ Route::get('/kesalahanlogin', function () {
 Route::get('/check-database', function () {
     return response()->view('checkdatabaseconnection');
 })->name('checkdatabase');
+
+?>

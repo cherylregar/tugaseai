@@ -5,18 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\SampahJual;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash; 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
-use App\Models\Admin; 
+use App\Models\Admin;
 use App\Models\Article;
 use App\Models\Kampus;
 use App\Models\Fakultas;
 use App\Models\Pelanggan;
 use App\Models\Wastepals;
 use App\Models\Event;
-
-
-
+use App\Models\EventWastepalsSampah;
 
 class AdminAuthController extends Controller
 {
@@ -52,7 +50,6 @@ class AdminAuthController extends Controller
         return view('admin.adminpage', compact('sampahKertas', 'sampahKardus', 'sampahPlastik', 'sampahItems'));
     }
 
-
     public function update(Request $request, $idSampah)
     {
         // Validasi input jika diperlukan
@@ -80,38 +77,41 @@ class AdminAuthController extends Controller
         return view('admin.tambahproduksampah', compact('lastSampah'));
     }
 
-
     public function tambahartikel()
     {
         $admins = Admin::all(); // Retrieve all admins
         $lastArticle = Article::latest()->first();
         $lastIdArtikel = $lastArticle ? $lastArticle->idArtikel : null;
-    
+
         return view('admin.tambahartikel', [
             'admins' => $admins,
             'lastIdArtikel' => $lastIdArtikel
         ]);
     }
-    
 
     public function dashboard()
     {
-        $jumlahKampus = Kampus::count(); 
+        $jumlahKampus = Kampus::count();
         $jumlahFakultas = Fakultas::count();
         $jumlahPelanggan = Pelanggan::count();
         $jumlahLaki = DB::table('pelanggan')
-        ->where('jenisKel', 'Laki-laki')
-        ->count();
+            ->where('jenisKel', 'Laki-laki')
+            ->count();
         $jumlahPerempuan = DB::table('pelanggan')
-        ->where('jenisKel', 'Perempuan')
-        ->count();
+            ->where('jenisKel', 'Perempuan')
+            ->count();
         $jumlahWastepals = Wastepals::count();
         $jumlahEvent = Event::count();
         $jumlahJenisSampah = SampahJual::count();
 
-        return view('admin.dashboardadmin', compact('jumlahKampus','jumlahFakultas','jumlahPelanggan','jumlahLaki','jumlahPerempuan','jumlahWastepals','jumlahEvent','jumlahJenisSampah'));
+        return view('admin.dashboardadmin', compact('jumlahKampus', 'jumlahFakultas', 'jumlahPelanggan', 'jumlahLaki', 'jumlahPerempuan', 'jumlahWastepals', 'jumlahEvent', 'jumlahJenisSampah'));
     }
 
+    public function pengajuanEvent()
+    {
+        $events = Event::all(); // Retrieve all events
+        return view('admin.pengajuanevent', compact('events'));
+    }
 
     public function logout(Request $request)
     {
@@ -126,10 +126,45 @@ class AdminAuthController extends Controller
 
     public function kelolaartikel()
     {
-    $articles = \App\Models\Article::all(); // Ensure you import the Article model at the top of the file
-    return view('admin.kelolaartikel', compact('articles'));
+        $articles = \App\Models\Article::all(); // Ensure you import the Article model at the top of the file
+        return view('admin.kelolaartikel', compact('articles'));
     }
 
+    public function pengajuanSetorSampah()
+    {
+        $eventWastepalsSampah = EventWastepalsSampah::all();
+        return view('admin.pengajuansetorsampah', compact('eventWastepalsSampah'));
+    }
+    
 
-    // Other methods if any
+    public function editSetorSampah($id)
+    {
+        // Use where clause to find by idEvent instead of findOrFail
+        $eventSampah = EventWastepalsSampah::where('idEvent', $id)->firstOrFail();
+        return view('admin.editdatasetorevent', compact('eventSampah'));
+    }
+    
+    public function updateSetorSampah(Request $request, $id)
+    {
+        $request->validate([
+            'idWPal' => 'required|string',
+            'idSampah' => 'required|string',
+            'jumlahKilo' => 'required|numeric',
+            'statusSetor' => 'required|string',
+        ]);
+    
+        // Find the record by idEvent
+        $eventSampah = EventWastepalsSampah::where('idEvent', $id)->firstOrFail();
+    
+        // Update the record with new data
+        $eventSampah->idWPal = $request->input('idWPal');
+        $eventSampah->idSampah = $request->input('idSampah');
+        $eventSampah->jumlahKilo = $request->input('jumlahKilo');
+        $eventSampah->statusSetor = $request->input('statusSetor');
+        $eventSampah->save();
+    
+        return redirect()->route('setorsampah.index')->with('success', 'Data successfully updated');
+    }
+    
+
 }
