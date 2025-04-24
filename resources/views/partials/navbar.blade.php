@@ -31,7 +31,10 @@
                     <a href="{{ route('logincust') }}" class="nav-link">Masuk</a>
                 </li>
                 <li class="nav-item">
-                    <button class="signup-button">Registrasi</button>
+                    <!-- Wrap the Registrasi button in an anchor tag to redirect to the registercust page -->
+                    <a href="{{ route('registercust') }}" class="nav-link">
+                        <button class="signup-button">Registrasi</button>
+                    </a>
                 </li>
             </ul>
         </div>

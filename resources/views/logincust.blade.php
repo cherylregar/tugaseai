@@ -1,5 +1,4 @@
-<!-- File: resources/views/logincust.blade.php -->
-
+<!-- resources/views/logincust.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +15,7 @@
         Menghubungkan <span class="highlight">Pendidikan</span> dan <span class="highlight">Keberlanjutan</span>: WasteMate, Matahari Baru Bagi Kampus Hijau. Gabung sekarang!
     </div>
     <div class="logincon">
-        <form action="{{ route('login') }}" method="POST">
+        <form action="{{ route('logincust') }}" method="POST">
             @csrf
             <div class="ajakantulisanlogin">Yuk, lanjutkan perjalananmu, <span class="highlight">#WasteMate!</span></div>
             <div class="inputemail">

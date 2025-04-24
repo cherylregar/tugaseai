@@ -7,6 +7,7 @@ use App\Http\Controllers\SampahJualController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\LoginPelangganController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\RegisterPelangganController;
 
 // Landing page route
 Route::get('/', [LandingPageController::class, 'index'])->name('landingpage');
@@ -21,6 +22,13 @@ Route::get('/about', function () {
 Route::get('/logincust', [LoginPelangganController::class, 'showLoginForm'])->name('logincust');
 Route::post('/logincust', [LoginPelangganController::class, 'login'])->name('logincust.submit');
 Route::post('/logout', [LoginPelangganController::class, 'logout'])->name('logout');
+
+Route::get('/berhasillogin', function () {
+    return view('berhasillogin');
+})->name('berhasillogin');
+
+Route::get('/registercust', [RegisterPelangganController::class, 'showRegisterForm'])->name('registercustform');
+Route::post('/registercust', [RegisterPelangganController::class, 'register'])->name('registercust');
 
 // Admin login routes
 Route::get('/loginadmin', [AdminAuthController::class, 'showLoginForm'])->name('loginadmin');
