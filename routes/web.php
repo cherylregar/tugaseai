@@ -27,8 +27,12 @@ Route::get('/berhasillogin', function () {
     return view('berhasillogin');
 })->name('berhasillogin');
 
+
 Route::get('/registercust', [RegisterPelangganController::class, 'showRegisterForm'])->name('registercustform');
 Route::post('/registercust', [RegisterPelangganController::class, 'register'])->name('registercust');
+Route::get('/testingregister', function () {
+    return view('testingregister');
+})->name('testingregister');
 
 // Admin login routes
 Route::get('/loginadmin', [AdminAuthController::class, 'showLoginForm'])->name('loginadmin');

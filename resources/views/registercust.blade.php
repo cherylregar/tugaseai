@@ -7,9 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Customer</title>
     <link rel="stylesheet" href="{{ asset('css/logincust.css') }}">
+    <style>
+        /* Styling untuk popup */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            display: none; /* Secara default popup tersembunyi */
+            z-index: 1000;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .popup.show {
+            display: block; /* Tampilkan popup */
+        }
+    </style>
     <script>
-        @if(session('success'))
-            alert("{{ session('success') }}");
+        // Menampilkan popup jika ada pesan error
+        @if(session('error'))
+            window.onload = function() {
+                var popup = document.getElementById('errorPopup');
+                popup.innerHTML = "{{ session('error') }}"; // Tampilkan pesan error
+                popup.classList.add('show'); // Tampilkan popup
+            };
         @endif
     </script>
 </head>
@@ -21,6 +48,7 @@
         Menghubungkan <span class="highlight">Pendidikan</span> dan <span class="highlight">Keberlanjutan</span>: WasteMate, Matahari Baru Bagi Kampus Hijau. Gabung sekarang!
     </div>
     <div class="logincon">
+        <!-- Form Registrasi -->
         <form action="{{ route('registercust') }}" method="POST">
             @csrf
             <div class="ajakantulisanlogin">Yuk, bergabung dengan kami, <span class="highlight">#WasteMate!</span></div>
@@ -70,5 +98,9 @@
             Sudah punya akun? <a href="{{ route('logincust') }}" class="highlight">Login disini</a>
         </div>
     </div>
+
+    <!-- Popup Error -->
+    <div id="errorPopup" class="popup"></div>
+
 </body>
 </html>

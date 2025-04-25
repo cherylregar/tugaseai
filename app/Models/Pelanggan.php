@@ -1,9 +1,9 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Hash;
 
 class Pelanggan extends Model
 {
@@ -27,4 +27,22 @@ class Pelanggan extends Model
         'idFakultas',
         'jenisKel'
     ];
+
+    // Relasi dengan Kampus
+    public function kampus()
+    {
+        return $this->belongsTo(Kampus::class, 'idKampus');
+    }
+
+    // Relasi dengan Fakultas
+    public function fakultas()
+    {
+        return $this->belongsTo(Fakultas::class, 'idFakultas');
+    }
+
+    // Mutator untuk password
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['passPel'] = Hash::make($value);
+    }
 }
