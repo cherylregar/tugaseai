@@ -9,6 +9,7 @@ use App\Http\Controllers\LoginPelangganController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\RegisterPelangganController;
 
+
 // Landing page route
 Route::get('/', [LandingPageController::class, 'index'])->name('landingpage');
 Route::get('/articlespages/{idArtikel}', [ArticleController::class, 'show'])->name('articlespages.show');
@@ -61,7 +62,7 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     Route::post('/update-landing-page', [ArticleController::class, 'updateLandingPageArticles'])->name('admin.update.landingpage');
     Route::get('/edit/{idArtikel}', [ArticleController::class, 'edit'])->name('admin.edit');
     Route::post('/update/{idArtikel}', [ArticleController::class, 'update'])->name('admin.update');
-    Route::put('/articles/{idArtikel}', [ArticleController::class, 'update'])->name('admin.update');
+    Route::put('/articles/{idArtikel}', [ArticleController::class, 'update'])->name('admin.update.article');
     Route::get('/tambahartikel', [ArticleController::class, 'create'])->name('admin.tambahartikel');
     Route::post('/storeartikel', [ArticleController::class, 'store'])->name('admin.storeartikel');
     Route::delete('/delete/{idArtikel}', [ArticleController::class, 'destroy'])->name('admin.delete');

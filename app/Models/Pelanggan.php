@@ -10,11 +10,8 @@ class Pelanggan extends Model
     use HasFactory;
 
     protected $table = 'pelanggan';
-
     protected $primaryKey = 'idPelanggan';
-
     public $incrementing = false;
-
     protected $keyType = 'string';
 
     protected $fillable = [
@@ -45,4 +42,11 @@ class Pelanggan extends Model
     {
         $this->attributes['passPel'] = Hash::make($value);
     }
+
+    // Di dalam Pelanggan.php
+public function setPassPelAttribute($value)
+{
+    $this->attributes['passPel'] = Hash::make($value);
+}
+
 }
